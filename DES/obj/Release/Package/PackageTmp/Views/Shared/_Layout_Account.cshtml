@@ -1,0 +1,56 @@
+﻿@using DESCore.Models
+
+@if (Session["UserModel"] != null)
+{
+    UserModel user = (UserModel)Session["UserModel"];
+        
+    <ul class="nav navbar-nav">
+        <li>
+            <ul class="nav navbar-nav navbar-right">
+                @if(user.IsAdmin)
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Management<b class="caret" style="margin-left:5px;"></b>
+                        </a>
+                        <ul class="dropdown-menu navbar-inverse">
+                            <li>@Html.ActionLink("User Management", "Index", "User")</li>
+                            <li>@Html.ActionLink("Staff Management", "Index", "Staff")</li>
+                            <li>@Html.ActionLink("Settings", "Index", "Set")</li>
+                        </ul>
+                    </li>
+                }
+                <li>@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
+            </ul>
+
+        </li>
+    </ul>  
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink(" ", "BackWork", "Home", null, new { @class = "glyphicon glyphicon-time", @title = "Background Task", @style = "margin-right:10px" })</li>
+        <li style="margin-top:4px" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-bell" style="margin-right:5px;"></span><b class="caret" style="margin-left:5px;"></b>
+            </a>
+            <ul class="dropdown-menu navbar-inverse">
+                <li>@Html.ActionLink("Download Application", "Download", "Home")</li>
+                <li>@Html.ActionLink("Notification", "Notification", "Home")</li>
+            </ul>
+        </li>
+        <li style="margin-top:4px" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user" style="margin-right:5px;"></span>@user.FullName<b class="caret" style="margin-left:5px;"></b>
+            </a>
+            <ul class="dropdown-menu navbar-inverse">
+                <li><a href="#" id="change_password_menu">Change Password</a></li>
+                <li><a href="#" id="user_settings_menu">User Settings</a></li>
+                <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+            </ul>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+    </ul>
+}

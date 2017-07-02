@@ -1,0 +1,88 @@
+﻿<table class="table">
+    <tr>
+        <td align="right" style="padding-right:30px; border-top:none; border-right: 1px solid #dddddd">
+            <table id="table_events_enable" width="340">
+                <tr>
+                    <td style="border:none">
+                        <button class="btn btn-danger" style="width: 140px" onclick="program_all_events_enable_site()">Program to Site</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_opentag" style="margin-right:10px"/><label>DoorOpenTag</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_openhs" style="margin-right:10px" /><label>DoorOpenHS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_opentrade" style="margin-right:10px" /><label>DoorOpenTrade</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_openexit" style="margin-right:10px" /><label>DoorOpenExit</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_openforsed" style="margin-right:10px" /><label>DoorOpenForsed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_open" style="margin-right:10px" /><label>DoorOpen</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_openremote" style="margin-right:10px" /><label>DoorOpenRemote</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_closed" style="margin-right:10px" /><label>DoorClosed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_mainon" style="margin-right:10px" /><label>MainOn</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_mainoff" style="margin-right:10px" /><label>MainOff</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <input type="checkbox" id="check_door_progchanged" style="margin-right:10px" /><label>ProgChanged</label>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="left" style="padding-left:30px; border-top:none;">
+            <table id="table_datetime" width="340">
+                <tr>
+                    <td style="border:none">RemoteSite Time: </td>
+                </tr>
+                <tr>
+                    <td style="border:none; padding-bottom:20px">
+                        <button class="btn btn-success" style="margin-right: 10px; width:240px" onclick="retrieve_all_datetime_site()">Retrieve DateTime from Site</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none">
+                        <button class="btn btn-danger" style="width: 240px" onclick="program_all_datetime_site()">Program GMT Time to Site</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

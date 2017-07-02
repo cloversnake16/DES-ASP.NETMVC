@@ -1,0 +1,50 @@
+D:\SGC\Work\Paul Bennett\DES\DES\Debug\DESNotification.exe.config
+D:\SGC\Work\Paul Bennett\DES\DES\Debug\DESNotification.exe
+D:\SGC\Work\Paul Bennett\DES\DES\Debug\DESNotification.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\bin\Debug\DESNotification.exe.config
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\bin\Debug\DESNotification.exe
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\bin\Debug\DESNotification.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.Controls.NotifyControl.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.FormNotification.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.NotificationInstaller.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.Properties.Resources.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.csproj.GenerateResource.Cache
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.exe
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\obj\Debug\DESNotification.pdb
+D:\SGC\Work\DES\DES\DESNotification\bin\Debug\DESNotification.exe.config
+D:\SGC\Work\DES\DES\DESNotification\bin\Debug\DESNotification.exe
+D:\SGC\Work\DES\DES\DESNotification\bin\Debug\DESNotification.pdb
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.Controls.NotifyControl.resources
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.FormNotification.resources
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.NotificationInstaller.resources
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.Properties.Resources.resources
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.csproj.GenerateResource.Cache
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.exe
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.pdb
+D:\SGC\Work\DES\DES\DESNotification\obj\Debug\DESNotification.csprojResolveAssemblyReference.cache
+D:\Work\DES\DES\DESNotification\bin\Debug\DESNotification.exe.config
+D:\Work\DES\DES\DESNotification\bin\Debug\DESNotification.exe
+D:\Work\DES\DES\DESNotification\bin\Debug\DESNotification.pdb
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.Controls.NotifyControl.resources
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.FormNotification.resources
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.NotificationInstaller.resources
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.Properties.Resources.resources
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.csproj.GenerateResource.Cache
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.exe
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.pdb
+D:\Work\DES\DES\DESNotification\obj\Debug\DESNotification.csprojResolveAssemblyReference.cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Debug\DESNotification.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Debug\DESNotification.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Debug\DESNotification.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Debug\DESNotification.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Debug\DESNotification.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.csprojResolveAssemblyReference.cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.Controls.NotifyControl.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.FormNotification.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.NotificationInstaller.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.Properties.Resources.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.csproj.GenerateResource.Cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Debug\DESNotification.pdb

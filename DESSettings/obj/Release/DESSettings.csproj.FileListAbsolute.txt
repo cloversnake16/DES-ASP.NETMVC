@@ -1,0 +1,9 @@
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\bin\Release\DESSettings.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\bin\Release\DESSettings.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\bin\Release\DESSettings.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Release\DESSettings.FormSettings.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Release\DESSettings.Properties.Resources.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Release\DESSettings.csproj.GenerateResource.Cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Release\DESSettings.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Release\DESSettings.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Release\DESSettings.csprojResolveAssemblyReference.cache

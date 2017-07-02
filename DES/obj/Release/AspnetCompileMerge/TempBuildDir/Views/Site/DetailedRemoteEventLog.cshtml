@@ -1,0 +1,21 @@
+﻿@model DESCore.Models.RemoteSiteEventModel
+
+@{
+    ViewBag.Title = "DetailedEventLog";
+}
+
+<h3><b>Detailed Remote EventLog</b></h3>
+<br />
+@Html.ActionLink("RemoteEventLog", "RemoteEventLog", null, null, new { @class = "btn btn-success" })
+<br />
+<h4><b>Event Status: </b>@Model.RemoteSiteEventLog.Status</h4>
+<br />
+<h4><b>Event Description: </b>@Model.RemoteSiteEventLog.Description</h4>
+<br />
+<h4><b>Request:</b></h4>
+<br />
+<h4>@DESCore.Helpers.ConvertHelper.GetString(Model.RemoteSiteEventLog.Request)</h4>
+<br />
+<h4><b>Response:</b></h4>
+<br />
+<h4>@DESCore.Helpers.ConvertHelper.GetString(Model.RemoteSiteEventLog.Response)</h4>

@@ -1,0 +1,136 @@
+﻿<div class="navbar">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#view_staff_group">Staff Group</a></li>
+        <li><a data-toggle="tab" href="#view_staff">Staff</a></li>
+    </ul>
+    <div class="tab-content" style="margin-top:20px">
+        <div id="view_staff_group" class="tab-pane fade in active">@Html.Partial("StaffGroup")</div>
+        <div id="view_staff" class="tab-pane fade">@Html.Partial("Staff")</div>
+    </div>
+</div>
+
+<div id="create-staff-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:360px">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#428bca;">
+                <p style="margin:0; text-align: center; font-size: medium;color:#ffffff"><b>Create Staff</b></p>
+            </div>
+            <div class="modal-body">
+                <table class="table table-condensed" style="margin:0">
+                    <tr>
+                        <td style="border:none">FirstName</td>
+                        <td style="border:none"><input type="text" style="width:180px" /></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none">LastName</td>
+                        <td style="border:none"><input type="text" style="width:180px" /></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none">Payroll No.</td>
+                        <td style="border:none"><input type="text" style="width:180px" /></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none">DateExpire</td>
+                        <td style="border:none"><input type="date" style="width:180px" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer" style="margin:0">
+                <p id="create-staff-info" style="color:#0000ff"></p>
+                <p id="create-staff-error" style="color: #ff0000"></p>
+                <button type="button" class="btn btn-primary" style=" width:100px" onclick="create_staff()">Create</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style=" width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="update-staff-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:360px">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#428bca;">
+                <p style="margin:0; text-align: center; font-size: medium;color:#ffffff"><b>Update Staff</b></p>
+            </div>
+            <div class="modal-body">
+                <table class="table table-condensed" style="margin:0">
+                    <tr>
+                        <td style="border:none">FirstName</td>
+                        <td style="border:none"><input type="text" style="width:180px" /></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none">LastName</td>
+                        <td style="border:none"><input type="text" style="width:180px" /></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none">Payroll No.</td>
+                        <td style="border:none"><input type="text" style="width:180px" /></td>
+                    </tr>
+                    <tr>
+                        <td style="border:none">DateExpire</td>
+                        <td style="border:none"><input type="date" style="width:180px" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer" style="margin:0">
+                <p id="update-staff-info" style="color:#0000ff"></p>
+                <p id="update-staff-error" style="color: #ff0000"></p>
+                <button type="button" class="btn btn-primary" style=" width:100px" onclick="update_staff()">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style=" width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="remove-staff-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:360px">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#428bca;">
+                <p style="margin:0; text-align: center; font-size: medium;color:#ffffff"><b>Remove Staff</b></p>
+            </div>
+            <div class="modal-body">
+                <p id="remove-staff-message" style="margin:0; text-align: center; font-size: medium;"></p>
+            </div>
+            <div class="modal-footer" style="margin:0">
+                <p id="remove-staff-info" style="color:#0000ff"></p>
+                <p id="remove-staff-error" style="color: #ff0000"></p>
+                <button type="button" class="btn btn-primary" style=" width:100px" onclick="remove_staff()">Remove</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style=" width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="remove-staff-group-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:400px">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#ff0000;">
+                <p style="text-align: center; font-size: medium;color:#ffffff"><b>Remove staffgroup</b></p>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: medium">Are you sure to remove the staff group?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" style=" width:100px" onclick="remove_staff_group()">Remove</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style=" width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="program_staff_group_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:400px">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#ff0000;">
+                <p style="text-align: center; font-size: medium;color:#ffffff"><b>Remove staffgroup</b></p>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: medium">Are you sure to program the staff group?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" style=" width:100px" onclick="program_staff_group()">Program</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style=" width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+

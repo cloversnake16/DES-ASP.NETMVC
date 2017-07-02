@@ -1,0 +1,175 @@
+﻿@using DESCore.Models
+@model DES.Models.SiteDataViewModel
+
+<div style="margin: 0 auto 20px auto; width: 300px;">
+    <button class="btn btn-success" style="margin-right: 10px; width:140px" onclick="retrieve_all_schedule_site()">Retrieve from Site</button>
+    <button class="btn btn-danger" style="width: 140px" onclick="program_all_schedule_site()">Program to Site</button>
+</div>
+<div style="margin: auto; width: 1130px;">
+    <table id="table-schedules" class="table-bordered table-condensed">
+        <tr>
+            <th style="text-align:center" width="50px">Sch</th>
+            <th style="text-align:center" width="110px">Start1</th>
+            <th style="text-align:center" width="110px">End1</th>
+            <th style="text-align:center" width="245px">Day1</th>
+            <th style="text-align:center" width="110px">Start2</th>
+            <th style="text-align:center" width="110px">End2</th>
+            <th style="text-align:center" width="245px">Day2</th>
+            <th style="text-align:center" width="50px">Action</th>
+            <th style="text-align:center" width="100px">Updated</th>
+        </tr>
+        @foreach (var item in Model.ScheduleViewModels)
+        {
+            <tr>
+                <td width="50px" style="text-align:center">@item.ScheduleIndex</td>
+                <td width="110px" align="center">
+                    <select>
+                        @for (int i = 0; i < 24; i++)
+                        {
+                            if (i == item.Start1Hour)
+                            {
+                                <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                    <span> : </span>
+                    <select>
+                        @for (int i = 0; i < 60; i++)
+                        {
+                            if (i == item.Start1Minute)
+                            {
+                                <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td width="110" align="center">
+                    <select>
+                        @for (int i = 0; i < 24; i++)
+                        {
+                            if (i == item.End1Hour)
+                            {
+                        <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                        <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                    <span> : </span>
+                    <select>
+                        @for (int i = 0; i < 60; i++)
+                        {
+                            if (i == item.End1Minute)
+                            {
+                        <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                        <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td width="240px" align="center">
+                    @for (int i = 0; i < 7; i++)
+                    {
+                        if (item.Day1 != null && item.Day1[i])
+                        {
+                            <span class="boolspan selected" style="padding: 5px">@ConstantsModel.DayOfWeek[i]</span>
+                        }
+                        else
+                        {
+                            <span class="boolspan" style="padding: 5px">@ConstantsModel.DayOfWeek[i]</span>
+                        }
+                    }
+                </td>
+                <td width="110px" align="center">
+                    <select>
+                        @for (int i = 0; i < 24; i++)
+                        {
+                            if (i == item.Start2Hour)
+                            {
+                        <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                        <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                    <span> : </span>
+                    <select>
+                        @for (int i = 0; i < 60; i++)
+                        {
+                            if (i == item.Start2Minute)
+                            {
+                        <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                        <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td width="110px" align="center">
+                    <select>
+                        @for (int i = 0; i < 24; i++)
+                        {
+                            if (i == item.End2Hour)
+                            {
+                        <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                        <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                    <span> : </span>
+                    <select>
+                        @for (int i = 0; i < 60; i++)
+                        {
+                            if (i == item.End2Minute)
+                            {
+                        <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                        <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td width="240px" align="center">
+                    @for (int i = 0; i < 7; i++)
+                    {
+                        if (item.Day2 != null && item.Day2[i])
+                        {
+                            <span class="boolspan selected" style="padding: 5px">@ConstantsModel.DayOfWeek[i]</span>
+                        }
+                        else
+                        {
+                            <span class="boolspan" style="padding: 5px">@ConstantsModel.DayOfWeek[i]</span>
+                        }
+                    }
+                </td>
+                <td width="50" align="center">
+                    <span class="glyphicon glyphicon-save retrieve-schedule-site" title="Retrieve from site" style="color: #428bca;margin-right:5px"></span>
+                    <span class="glyphicon glyphicon-open program-schedule-site" title="Program to site" style="color: #428bca;"></span>
+                </td>
+                <td align="center" style="width:100px;">@item.DateUpdated</td>
+            </tr>
+        }
+    </table>
+</div>

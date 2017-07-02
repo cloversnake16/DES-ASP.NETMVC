@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOR ENTRY SYSTEM</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        span.glyphicon:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        span.tag-color:hover, #table_login a:hover, td div.boolspan:hover, td span:hover {
+            cursor: pointer;
+        }
+
+        .tab-content.site-data table td input, .tab-content.site-data table td input:focus {
+            border: none;
+            outline: none;
+        }
+
+        div.div-channel, div.div-staffdoor {
+            border: 1px solid #dddddd;
+            padding: 5px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            display: inline-block;
+        }
+
+        div.div-channel:hover, div.div-staffdoor:hover {
+            cursor: pointer;
+        }
+
+        div.div-channel.selected {
+            color: #ffffff;
+            background-color: #ff0000;
+        }
+
+        div.div-staffdoor.selected {
+            background-color: #00ff00;
+        }
+
+        td div.boolspan {
+            border: 1px solid #dddddd;
+            padding: 5px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            display: none;
+        }
+
+        td div.boolspan.visible {
+            display: inline-block;
+        }
+
+        td span.boolspan {
+            border: 1px solid #dddddd;
+            padding: 5px;
+        }
+
+        td div {
+            font-size: small;
+        }
+
+        .tag-color {
+            border: 1px solid #dddddd;
+        }
+
+        td span.boolspan.selected, td div.boolspan.selected {
+            background-color: #00ff00;
+        }
+
+        .div-opendoor {
+            text-align: center;
+            width: 60px;
+            display: inline-block;
+            border: 1px solid #dddddd;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .div-opendoor:hover {
+            cursor: pointer;
+            background-color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <img class="img-responsive" src="~/Images/NCS Logo_h.jpg" width="360" />
+            </div>
+            <div class="navbar" style="margin-top:30px">
+                @if (Session["SiteModel"] != null)
+                {
+                    DESCore.Models.SiteModel siteModel = (DESCore.Models.SiteModel)Session["SiteModel"];
+
+                    <div class="navbar-right" style="color:#0000ff;">
+                        <table class="table-bordered">
+                            <tr>
+                                <td style="padding: 5px 10px" align="center">SiteName: @siteModel.Site.SiteName</td>
+                                <td style="padding: 5px 10px" align="center">DeviceId: @siteModel.Site.DeviceId</td>
+                                @if (string.IsNullOrEmpty(siteModel.ACMVersion))
+                                {
+                                    <td style="padding: 5px 10px" align="center">Disconnect</td>
+                                }
+                                else
+                                {
+                                    <td style="padding: 5px 10px" align="center">ACMVersion: @siteModel.ACMVersion</td>
+                                }
+                            </tr>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:84px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Home", "Index", "Dashboard", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.Partial("_Layout_Account")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" style="margin-top:120px">
+        @RenderBody()
+        <footer>
+        </footer>
+    </div>
+    @Html.Partial("_Layout_Modals")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        var urlSendCode = '@Url.Action("SendCode", "Account")';
+        var urlResetPassword = '@Url.Action("ResetPassword", "Account")';
+        var urlChangePassword = '@Url.Action("ChangePassword", "Account")';
+        var urlUserSettings = '@Url.Action("UserSettings", "Account")';
+        var urlCreateUser = '@Url.Action("CreateUser", "User")';
+        var urlUpdateUser = '@Url.Action("UpdateUser", "User")';
+        var urlDeleteUser = '@Url.Action("DeleteUser", "User")';
+        var urlSearchUser = '@Url.Action("Search", "User")';
+        var urlSiteData = '@Url.Action("Index", "Site")';
+        var urlExistsTemplate = '@Url.Action("ExistsTemplate", "Site")';
+        var urlExistsBackTask = '@Url.Action("ExistsBackTask", "Site")';
+        var urlDeleteSiteData = '@Url.Action("DeleteSiteData", "Site")';
+        var urlLoadParameter = '@Url.Action("LoadParameter", "Site")';
+        var urlSaveParameter = '@Url.Action("SaveParameter", "Site")';
+        var urlRetrieveDateTime = '@Url.Action("RetrieveDateTime", "Site")';
+        var urlProgramDateTime = '@Url.Action("ProgramDateTime", "Site")';
+        var urlProgramEventsEnable = '@Url.Action("ProgramEventsEnable", "Site")';
+        var urlCreateSite = '@Url.Action("CreateSite", "Dashboard")';
+        var urlUpdateSite = '@Url.Action("UpdateSite", "Dashboard")';
+        var urlDeleteSite = '@Url.Action("DeleteSite", "Dashboard")';
+        var urlSearchSite = '@Url.Action("SearchSite", "Dashboard")';
+        var urlConnectionStatus = '@Url.Action("ConnectionStatus", "Dashboard")';
+        var urlOpenDoor = '@Url.Action("OpenDoorCommand", "Dashboard")';
+        var urlSaveReservedChannels = '@Url.Action("SaveReservedChannels", "Set")';
+        var urlSaveDoorDescription = '@Url.Action("SaveDoorDescription", "Set")';
+        var urlSetAlertSetting = '@Url.Action("SetAlertSetting", "Set")';
+        var urlCreateStaff = '@Url.Action("CreateStaff", "Staff")';
+        var urlUpdateStaff = '@Url.Action("UpdateStaff", "Staff")';
+        var urlRemoveStaff = '@Url.Action("RemoveStaff", "Staff")';
+        var urlCreateStaffGroup = '@Url.Action("CreateStaffGroup", "Staff")';
+        var urlUpdateStaffGroup = '@Url.Action("UpdateStaffGroup", "Staff")';
+        var urlRemoveStaffGroup = '@Url.Action("RemoveStaffGroup", "Staff")';
+        var urlProgramStaffGroup = '@Url.Action("ProgramStaffGroup", "Staff")';
+        var urlRetryTask = '@Url.Action("RetryTask", "Home")';
+        var urlCancelTask = '@Url.Action("CancelTask", "Home")';
+    </script>
+
+    <script type="text/javascript" src="~/Scripts/DES/utility.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/account.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/site.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/sitedata.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/channel.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/schedule.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/tradecode.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/door.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/staff_access.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/system_options.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/datetime.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/events.js"></script>
+    <script type="text/javascript" src="~/Scripts/DES/resident.js"></script>
+</body>
+</html>

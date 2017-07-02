@@ -1,0 +1,1104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BackTask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="WorkType" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="WorkStatus" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="WorkItem" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="WorkIndex" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="2048" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Channel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="ChannelIndex" Type="int" Nullable="false" />
+          <Property Name="Flat" Type="int" Nullable="false" />
+          <Property Name="PPP" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Door1" Type="bigint" Nullable="false" />
+          <Property Name="Door2" Type="bigint" Nullable="false" />
+          <Property Name="Tag1" Type="int" Nullable="false" />
+          <Property Name="Tag2" Type="int" Nullable="false" />
+          <Property Name="Tag3" Type="int" Nullable="false" />
+          <Property Name="Tag4" Type="int" Nullable="false" />
+          <Property Name="Tag5" Type="int" Nullable="false" />
+          <Property Name="Tag6" Type="int" Nullable="false" />
+          <Property Name="Tag7" Type="int" Nullable="false" />
+          <Property Name="Tag8" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Description">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Index" Type="int" Nullable="false" />
+          <Property Name="Contents" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="IpAddress" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="ACMVersion" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="InBound" Type="bigint" Nullable="false" />
+          <Property Name="OutBound" Type="bigint" Nullable="false" />
+          <Property Name="IsConnect" Type="bit" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Door">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="DoorIndex" Type="int" Nullable="false" />
+          <Property Name="LockTimeout" Type="int" Nullable="false" />
+          <Property Name="ScheduleIndex" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="int" />
+          <Property Name="Event" Type="varchar" MaxLength="32" />
+          <Property Name="Status" Type="varchar" MaxLength="32" />
+          <Property Name="Description" Type="varchar" MaxLength="512" />
+          <Property Name="Request" Type="varbinary(max)" />
+          <Property Name="Response" Type="varbinary(max)" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Contents" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RemoteSiteEventLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="32" />
+          <Property Name="EventNumber" Type="int" Nullable="false" />
+          <Property Name="DateEvent" Type="datetime" Nullable="false" />
+          <Property Name="DateACM" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="512" />
+          <Property Name="Request" Type="varbinary(max)" />
+          <Property Name="Response" Type="varbinary(max)" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resident">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="FlatNumber" Type="int" Nullable="false" />
+          <Property Name="ResidentName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="HomeTel" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="MobileTel" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="TagIndex" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="ScheduleIndex" Type="int" Nullable="false" />
+          <Property Name="Start1Hour" Type="int" Nullable="false" />
+          <Property Name="Start1Minute" Type="int" Nullable="false" />
+          <Property Name="End1Hour" Type="int" Nullable="false" />
+          <Property Name="End1Minute" Type="int" Nullable="false" />
+          <Property Name="Day1" Type="int" Nullable="false" />
+          <Property Name="Start2Hour" Type="int" Nullable="false" />
+          <Property Name="Start2Minute" Type="int" Nullable="false" />
+          <Property Name="End2Hour" Type="int" Nullable="false" />
+          <Property Name="End2Minute" Type="int" Nullable="false" />
+          <Property Name="Day2" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CheckPeriod" Type="int" Nullable="false" />
+          <Property Name="MaxDataSize" Type="int" Nullable="false" />
+          <Property Name="MaxEventlogSize" Type="int" Nullable="false" />
+          <Property Name="DateReset" Type="date" Nullable="false" />
+          <Property Name="ReservedChannel" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="16" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="64" />
+          <Property Name="CustomerAddress" Type="varchar" MaxLength="64" />
+          <Property Name="CustomerPhone" Type="varchar" MaxLength="32" />
+          <Property Name="Address2" Type="varchar" MaxLength="64" />
+          <Property Name="Area" Type="varchar" MaxLength="64" />
+          <Property Name="Town" Type="varchar" MaxLength="64" />
+          <Property Name="City" Type="varchar" MaxLength="64" />
+          <Property Name="Country" Type="varchar" MaxLength="64" />
+          <Property Name="DateUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SiteData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="SiteDataType" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="TemplateName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="IsCompleted" Type="bit" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="PayrollNumber" Type="int" Nullable="false" />
+          <Property Name="DateExpire" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StaffAccess">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="StaffAccessIndex" Type="int" Nullable="false" />
+          <Property Name="AccessLevel" Type="int" Nullable="false" />
+          <Property Name="PassNumber" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StaffGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffGroupName" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="StaffId1" Type="int" Nullable="false" />
+          <Property Name="StaffId2" Type="int" Nullable="false" />
+          <Property Name="StaffId3" Type="int" Nullable="false" />
+          <Property Name="StaffId4" Type="int" Nullable="false" />
+          <Property Name="StaffId5" Type="int" Nullable="false" />
+          <Property Name="StaffId6" Type="int" Nullable="false" />
+          <Property Name="StaffId7" Type="int" Nullable="false" />
+          <Property Name="StaffId8" Type="int" Nullable="false" />
+          <Property Name="Tag1" Type="int" Nullable="false" />
+          <Property Name="Tag2" Type="int" Nullable="false" />
+          <Property Name="Tag3" Type="int" Nullable="false" />
+          <Property Name="Tag4" Type="int" Nullable="false" />
+          <Property Name="Tag5" Type="int" Nullable="false" />
+          <Property Name="Tag6" Type="int" Nullable="false" />
+          <Property Name="Tag7" Type="int" Nullable="false" />
+          <Property Name="Tag8" Type="int" Nullable="false" />
+          <Property Name="Door1" Type="bigint" Nullable="false" />
+          <Property Name="Door2" Type="bigint" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StaffGroupSite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffGroupId" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="ChannelIndex" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SystemOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="Option1" Type="int" Nullable="false" />
+          <Property Name="Option2" Type="int" Nullable="false" />
+          <Property Name="TradeSchedule" Type="int" Nullable="false" />
+          <Property Name="RingTimeout" Type="int" Nullable="false" />
+          <Property Name="AudioTimeout" Type="int" Nullable="false" />
+          <Property Name="WardenChannel" Type="int" Nullable="false" />
+          <Property Name="CustomerNo" Type="int" Nullable="false" />
+          <Property Name="SiteNo" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TradeCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteDataId" Type="int" Nullable="false" />
+          <Property Name="TradeCodeIndex" Type="int" Nullable="false" />
+          <Property Name="PassNumber" Type="int" Nullable="false" />
+          <Property Name="ScheduleIndex" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="DefaultPassword" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="256" />
+          <Property Name="UserTypeId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="64" />
+          <Property Name="LastName" Type="varchar" MaxLength="64" />
+          <Property Name="Address" Type="varchar" MaxLength="64" />
+          <Property Name="Email" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="32" />
+          <Property Name="IsLogin" Type="bit" Nullable="false" />
+          <Property Name="ViewP" Type="char" MaxLength="1" />
+          <Property Name="EditP" Type="char" MaxLength="1" />
+          <Property Name="ReadP" Type="char" MaxLength="1" />
+          <Property Name="WriteP" Type="char" MaxLength="1" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Site_ToUser">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Site">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_ToUserType">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DESModelStoreContainer">
+          <EntitySet Name="BackTask" EntityType="Self.BackTask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Channel" EntityType="Self.Channel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Description" EntityType="Self.Description" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Door" EntityType="Self.Door" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventLog" EntityType="Self.EventLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RemoteSiteEventLog" EntityType="Self.RemoteSiteEventLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resident" EntityType="Self.Resident" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteData" EntityType="Self.SiteData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffAccess" EntityType="Self.StaffAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffGroup" EntityType="Self.StaffGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffGroupSite" EntityType="Self.StaffGroupSite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemOption" EntityType="Self.SystemOption" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TradeCode" EntityType="Self.TradeCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Site_ToUser" Association="Self.FK_Site_ToUser">
+            <End Role="User" EntitySet="User" />
+            <End Role="Site" EntitySet="Site" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_ToUserType" Association="Self.FK_User_ToUserType">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BackTask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="DeviceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="WorkType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WorkStatus" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WorkItem" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WorkIndex" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Channel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="ChannelIndex" Type="Int32" Nullable="false" />
+          <Property Name="Flat" Type="Int32" Nullable="false" />
+          <Property Name="PPP" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Door1" Type="Int64" Nullable="false" />
+          <Property Name="Door2" Type="Int64" Nullable="false" />
+          <Property Name="Tag1" Type="Int32" Nullable="false" />
+          <Property Name="Tag2" Type="Int32" Nullable="false" />
+          <Property Name="Tag3" Type="Int32" Nullable="false" />
+          <Property Name="Tag4" Type="Int32" Nullable="false" />
+          <Property Name="Tag5" Type="Int32" Nullable="false" />
+          <Property Name="Tag6" Type="Int32" Nullable="false" />
+          <Property Name="Tag7" Type="Int32" Nullable="false" />
+          <Property Name="Tag8" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Description">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Index" Type="Int32" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACMVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InBound" Type="Int64" Nullable="false" />
+          <Property Name="OutBound" Type="Int64" Nullable="false" />
+          <Property Name="IsConnect" Type="Boolean" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Door">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="DoorIndex" Type="Int32" Nullable="false" />
+          <Property Name="LockTimeout" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleIndex" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="EventLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" />
+          <Property Name="Event" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="Request" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Response" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="RemoteSiteEventLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="EventNumber" Type="Int32" Nullable="false" />
+          <Property Name="DateEvent" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateACM" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="Request" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Response" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Resident">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="FlatNumber" Type="Int32" Nullable="false" />
+          <Property Name="ResidentName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HomeTel" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MobileTel" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TagIndex" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleIndex" Type="Int32" Nullable="false" />
+          <Property Name="Start1Hour" Type="Int32" Nullable="false" />
+          <Property Name="Start1Minute" Type="Int32" Nullable="false" />
+          <Property Name="End1Hour" Type="Int32" Nullable="false" />
+          <Property Name="End1Minute" Type="Int32" Nullable="false" />
+          <Property Name="Day1" Type="Int32" Nullable="false" />
+          <Property Name="Start2Hour" Type="Int32" Nullable="false" />
+          <Property Name="Start2Minute" Type="Int32" Nullable="false" />
+          <Property Name="End2Hour" Type="Int32" Nullable="false" />
+          <Property Name="End2Minute" Type="Int32" Nullable="false" />
+          <Property Name="Day2" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CheckPeriod" Type="Int32" Nullable="false" />
+          <Property Name="MaxDataSize" Type="Int32" Nullable="false" />
+          <Property Name="MaxEventlogSize" Type="Int32" Nullable="false" />
+          <Property Name="DateReset" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReservedChannel" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="DeviceId" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPhone" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Town" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Site_ToUser" FromRole="Site" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SiteData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="SiteDataType" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TemplateName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsCompleted" Type="Boolean" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PayrollNumber" Type="Int32" Nullable="false" />
+          <Property Name="DateExpire" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="StaffAccess">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="StaffAccessIndex" Type="Int32" Nullable="false" />
+          <Property Name="AccessLevel" Type="Int32" Nullable="false" />
+          <Property Name="PassNumber" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="StaffGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffGroupName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StaffId1" Type="Int32" Nullable="false" />
+          <Property Name="StaffId2" Type="Int32" Nullable="false" />
+          <Property Name="StaffId3" Type="Int32" Nullable="false" />
+          <Property Name="StaffId4" Type="Int32" Nullable="false" />
+          <Property Name="StaffId5" Type="Int32" Nullable="false" />
+          <Property Name="StaffId6" Type="Int32" Nullable="false" />
+          <Property Name="StaffId7" Type="Int32" Nullable="false" />
+          <Property Name="StaffId8" Type="Int32" Nullable="false" />
+          <Property Name="Tag1" Type="Int32" Nullable="false" />
+          <Property Name="Tag2" Type="Int32" Nullable="false" />
+          <Property Name="Tag3" Type="Int32" Nullable="false" />
+          <Property Name="Tag4" Type="Int32" Nullable="false" />
+          <Property Name="Tag5" Type="Int32" Nullable="false" />
+          <Property Name="Tag6" Type="Int32" Nullable="false" />
+          <Property Name="Tag7" Type="Int32" Nullable="false" />
+          <Property Name="Tag8" Type="Int32" Nullable="false" />
+          <Property Name="Door1" Type="Int64" Nullable="false" />
+          <Property Name="Door2" Type="Int64" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="StaffGroupSite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffGroupId" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="ChannelIndex" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="SystemOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="Option1" Type="Int32" Nullable="false" />
+          <Property Name="Option2" Type="Int32" Nullable="false" />
+          <Property Name="TradeSchedule" Type="Int32" Nullable="false" />
+          <Property Name="RingTimeout" Type="Int32" Nullable="false" />
+          <Property Name="AudioTimeout" Type="Int32" Nullable="false" />
+          <Property Name="WardenChannel" Type="Int32" Nullable="false" />
+          <Property Name="CustomerNo" Type="Int32" Nullable="false" />
+          <Property Name="SiteNo" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TradeCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+          <Property Name="TradeCodeIndex" Type="Int32" Nullable="false" />
+          <Property Name="PassNumber" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleIndex" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DefaultPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="UserTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="IsLogin" Type="Boolean" Nullable="false" />
+          <Property Name="ViewP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="EditP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ReadP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="WriteP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Sites" Relationship="Self.FK_Site_ToUser" FromRole="User" ToRole="Site" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_User_ToUserType" FromRole="User" ToRole="UserType" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_User_ToUserType" FromRole="UserType" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Site_ToUser">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Site">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_ToUserType">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BackTasks" EntityType="Self.BackTask" />
+          <EntitySet Name="Channels" EntityType="Self.Channel" />
+          <EntitySet Name="Descriptions" EntityType="Self.Description" />
+          <EntitySet Name="Devices" EntityType="Self.Device" />
+          <EntitySet Name="Doors" EntityType="Self.Door" />
+          <EntitySet Name="EventLogs" EntityType="Self.EventLog" />
+          <EntitySet Name="Notifications" EntityType="Self.Notification" />
+          <EntitySet Name="RemoteSiteEventLogs" EntityType="Self.RemoteSiteEventLog" />
+          <EntitySet Name="Residents" EntityType="Self.Resident" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="Settings" EntityType="Self.Setting" />
+          <EntitySet Name="Sites" EntityType="Self.Site" />
+          <EntitySet Name="SiteDatas" EntityType="Self.SiteData" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="StaffAccesses" EntityType="Self.StaffAccess" />
+          <EntitySet Name="StaffGroups" EntityType="Self.StaffGroup" />
+          <EntitySet Name="StaffGroupSites" EntityType="Self.StaffGroupSite" />
+          <EntitySet Name="SystemOptions" EntityType="Self.SystemOption" />
+          <EntitySet Name="TradeCodes" EntityType="Self.TradeCode" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+          <AssociationSet Name="FK_Site_ToUser" Association="Self.FK_Site_ToUser">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Site" EntitySet="Sites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_ToUserType" Association="Self.FK_User_ToUserType">
+            <End Role="UserType" EntitySet="UserTypes" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DESModelStoreContainer" CdmEntityContainer="DESEntities">
+          <EntitySetMapping Name="BackTasks">
+            <EntityTypeMapping TypeName="DESModel.BackTask">
+              <MappingFragment StoreEntitySet="BackTask">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="WorkItem" ColumnName="WorkItem" />
+                <ScalarProperty Name="WorkIndex" ColumnName="WorkIndex" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Channels">
+            <EntityTypeMapping TypeName="DESModel.Channel">
+              <MappingFragment StoreEntitySet="Channel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="ChannelIndex" ColumnName="ChannelIndex" />
+                <ScalarProperty Name="Flat" ColumnName="Flat" />
+                <ScalarProperty Name="PPP" ColumnName="PPP" />
+                <ScalarProperty Name="Door1" ColumnName="Door1" />
+                <ScalarProperty Name="Door2" ColumnName="Door2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag4" ColumnName="Tag4" />
+                <ScalarProperty Name="Tag5" ColumnName="Tag5" />
+                <ScalarProperty Name="Tag6" ColumnName="Tag6" />
+                <ScalarProperty Name="Tag7" ColumnName="Tag7" />
+                <ScalarProperty Name="Tag8" ColumnName="Tag8" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Descriptions">
+            <EntityTypeMapping TypeName="DESModel.Description">
+              <MappingFragment StoreEntitySet="Description">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="DESModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="ACMVersion" ColumnName="ACMVersion" />
+                <ScalarProperty Name="InBound" ColumnName="InBound" />
+                <ScalarProperty Name="OutBound" ColumnName="OutBound" />
+                <ScalarProperty Name="IsConnect" ColumnName="IsConnect" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doors">
+            <EntityTypeMapping TypeName="DESModel.Door">
+              <MappingFragment StoreEntitySet="Door">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="DoorIndex" ColumnName="DoorIndex" />
+                <ScalarProperty Name="LockTimeout" ColumnName="LockTimeout" />
+                <ScalarProperty Name="ScheduleIndex" ColumnName="ScheduleIndex" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventLogs">
+            <EntityTypeMapping TypeName="DESModel.EventLog">
+              <MappingFragment StoreEntitySet="EventLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Request" ColumnName="Request" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="DESModel.Notification">
+              <MappingFragment StoreEntitySet="Notification">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RemoteSiteEventLogs">
+            <EntityTypeMapping TypeName="DESModel.RemoteSiteEventLog">
+              <MappingFragment StoreEntitySet="RemoteSiteEventLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EventNumber" ColumnName="EventNumber" />
+                <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
+                <ScalarProperty Name="DateACM" ColumnName="DateACM" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Request" ColumnName="Request" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Residents">
+            <EntityTypeMapping TypeName="DESModel.Resident">
+              <MappingFragment StoreEntitySet="Resident">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="FlatNumber" ColumnName="FlatNumber" />
+                <ScalarProperty Name="ResidentName" ColumnName="ResidentName" />
+                <ScalarProperty Name="HomeTel" ColumnName="HomeTel" />
+                <ScalarProperty Name="MobileTel" ColumnName="MobileTel" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TagIndex" ColumnName="TagIndex" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="DESModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="ScheduleIndex" ColumnName="ScheduleIndex" />
+                <ScalarProperty Name="Start1Hour" ColumnName="Start1Hour" />
+                <ScalarProperty Name="Start1Minute" ColumnName="Start1Minute" />
+                <ScalarProperty Name="End1Hour" ColumnName="End1Hour" />
+                <ScalarProperty Name="End1Minute" ColumnName="End1Minute" />
+                <ScalarProperty Name="Day1" ColumnName="Day1" />
+                <ScalarProperty Name="Start2Hour" ColumnName="Start2Hour" />
+                <ScalarProperty Name="Start2Minute" ColumnName="Start2Minute" />
+                <ScalarProperty Name="End2Hour" ColumnName="End2Hour" />
+                <ScalarProperty Name="End2Minute" ColumnName="End2Minute" />
+                <ScalarProperty Name="Day2" ColumnName="Day2" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="DESModel.Setting">
+              <MappingFragment StoreEntitySet="Settings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CheckPeriod" ColumnName="CheckPeriod" />
+                <ScalarProperty Name="MaxDataSize" ColumnName="MaxDataSize" />
+                <ScalarProperty Name="MaxEventlogSize" ColumnName="MaxEventlogSize" />
+                <ScalarProperty Name="DateReset" ColumnName="DateReset" />
+                <ScalarProperty Name="ReservedChannel" ColumnName="ReservedChannel" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sites">
+            <EntityTypeMapping TypeName="DESModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteDatas">
+            <EntityTypeMapping TypeName="DESModel.SiteData">
+              <MappingFragment StoreEntitySet="SiteData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="SiteDataType" ColumnName="SiteDataType" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="DESModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PayrollNumber" ColumnName="PayrollNumber" />
+                <ScalarProperty Name="DateExpire" ColumnName="DateExpire" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffAccesses">
+            <EntityTypeMapping TypeName="DESModel.StaffAccess">
+              <MappingFragment StoreEntitySet="StaffAccess">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="StaffAccessIndex" ColumnName="StaffAccessIndex" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+                <ScalarProperty Name="PassNumber" ColumnName="PassNumber" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffGroups">
+            <EntityTypeMapping TypeName="DESModel.StaffGroup">
+              <MappingFragment StoreEntitySet="StaffGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StaffGroupName" ColumnName="StaffGroupName" />
+                <ScalarProperty Name="StaffId1" ColumnName="StaffId1" />
+                <ScalarProperty Name="StaffId2" ColumnName="StaffId2" />
+                <ScalarProperty Name="StaffId3" ColumnName="StaffId3" />
+                <ScalarProperty Name="StaffId4" ColumnName="StaffId4" />
+                <ScalarProperty Name="StaffId5" ColumnName="StaffId5" />
+                <ScalarProperty Name="StaffId6" ColumnName="StaffId6" />
+                <ScalarProperty Name="StaffId7" ColumnName="StaffId7" />
+                <ScalarProperty Name="StaffId8" ColumnName="StaffId8" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag4" ColumnName="Tag4" />
+                <ScalarProperty Name="Tag5" ColumnName="Tag5" />
+                <ScalarProperty Name="Tag6" ColumnName="Tag6" />
+                <ScalarProperty Name="Tag7" ColumnName="Tag7" />
+                <ScalarProperty Name="Tag8" ColumnName="Tag8" />
+                <ScalarProperty Name="Door1" ColumnName="Door1" />
+                <ScalarProperty Name="Door2" ColumnName="Door2" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffGroupSites">
+            <EntityTypeMapping TypeName="DESModel.StaffGroupSite">
+              <MappingFragment StoreEntitySet="StaffGroupSite">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StaffGroupId" ColumnName="StaffGroupId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="ChannelIndex" ColumnName="ChannelIndex" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemOptions">
+            <EntityTypeMapping TypeName="DESModel.SystemOption">
+              <MappingFragment StoreEntitySet="SystemOption">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="TradeSchedule" ColumnName="TradeSchedule" />
+                <ScalarProperty Name="RingTimeout" ColumnName="RingTimeout" />
+                <ScalarProperty Name="AudioTimeout" ColumnName="AudioTimeout" />
+                <ScalarProperty Name="WardenChannel" ColumnName="WardenChannel" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="SiteNo" ColumnName="SiteNo" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TradeCodes">
+            <EntityTypeMapping TypeName="DESModel.TradeCode">
+              <MappingFragment StoreEntitySet="TradeCode">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+                <ScalarProperty Name="TradeCodeIndex" ColumnName="TradeCodeIndex" />
+                <ScalarProperty Name="PassNumber" ColumnName="PassNumber" />
+                <ScalarProperty Name="ScheduleIndex" ColumnName="ScheduleIndex" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DESModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="DefaultPassword" ColumnName="DefaultPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+                <ScalarProperty Name="ViewP" ColumnName="ViewP" />
+                <ScalarProperty Name="EditP" ColumnName="EditP" />
+                <ScalarProperty Name="ReadP" ColumnName="ReadP" />
+                <ScalarProperty Name="WriteP" ColumnName="WriteP" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLogins">
+            <EntityTypeMapping TypeName="DESModel.UserLogin">
+              <MappingFragment StoreEntitySet="UserLogin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="DESModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

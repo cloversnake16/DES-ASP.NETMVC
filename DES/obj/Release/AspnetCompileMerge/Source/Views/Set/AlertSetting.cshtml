@@ -1,0 +1,51 @@
+﻿@model DES.Models.SetViewModel
+<div style="margin:auto; width:350px">
+    <table id="table-alert-setting" class="table table-bordered" style="margin:0">
+        <tr>
+            <td align="right" style="background-color:#eeeeee">Check Period(m)</td>
+            <td><input style="border:none; outline:none;" value="@Model.CheckPeriod" /></td>
+        </tr>
+        <tr>
+            <td align="right" style="background-color:#eeeeee">InOut Size(MB)</td>
+            <td><input style="border:none; outline:none;" value="@Model.MaxDataSize" /></td>
+        </tr>
+        <tr>
+            <td align="right" style="background-color:#eeeeee">Eventlog Size</td>
+            <td><input style="border:none; outline:none;" value="@Model.MaxEventlogSize" /></td>
+        </tr>
+        <tr>
+            <td align="right" style="background-color:#eeeeee">Reset Date</td>
+            <td>
+                Month
+                <select class="MonthReset" style="margin-right:10px; padding:3px">
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        if (i == Model.MonthReset)
+                        {
+                            <option value="@i" selected>@i</option>
+                        }
+                        else
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    }
+                </select>
+                Day
+                <select class="DayReset" style="padding:3px">
+                    @for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, Model.MonthReset); i++)
+                    {
+                        if (i == Model.DayReset)
+                        {
+                            <option value="@i" selected>@i</option>
+                        }
+                        else
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    }
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-primary pull-right" style="margin-top:10px" onclick="update_alert_setting()">Update</button>
+</div>

@@ -1,0 +1,21 @@
+﻿@model DES.Models.SetViewModel
+
+<div style="margin: auto; width: 1140px;">
+    <table width="1140" class="table-bordered">
+        <tr>
+            <th style="text-align:center" width="80px">No</th>
+            <th style="text-align:center; padding:10px" width="960px">Description</th>
+            <th style="text-align:center" width="100px">Action</th>
+        </tr>
+        @for (int i = 0; i < 128; i++)
+        {
+            <tr>
+                <td style="width: 80px; text-align: center">@(i + 1)</td>
+                <td style="padding: 5px 10px"><input type="text" style="width:960px; max-width:960px; border:none; outline:none;" value="@Model.DoorDescriptions[i]" /></td>
+                <td align="center" style="width:100px;">
+                    <span class="glyphicon glyphicon-save save-door-description" title="Save description for door" style="color: #428bca;"></span>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,44 @@
+﻿@using DESCore.Models
+@model DES.Models.StaffModel
+
+<div style="margin:auto; width:1140px">
+    <table width="1140" style="margin-bottom:10px">
+        <tr>
+            <td style="border:none" align="right">
+                <button class="btn btn-primary" style="margin-right: 10px;" onclick="create_staff_modal()">Create Staff</button>
+            </td>
+        </tr>
+    </table>
+    <table width="1140" class="table-bordered table-striped" id="table-staff">
+        <tr>
+            <th width="7%" style="text-align:center; padding:6px;">No</th>
+            <th width="17%" style="text-align:center; padding:6px;">Firstname</th>
+            <th width="17%" style="text-align:center; padding:6px;">Lastname</th>
+            <th width="15%" style="text-align: center; padding: 6px;">Payroll No</th>
+            <th width="17%" style="text-align: center; padding: 6px;">DateExpire</th>
+            <th width="17%" style="text-align: center; padding: 6px;">DateUpdated</th>
+            <th width="10%" style="text-align: center; padding: 6px;">Action</th>
+        </tr>
+
+        @if (Model != null || Model.ListStaff != null)
+        {
+            for (var i = 0; i < Model.ListStaff.Count; i++)
+            {
+                var item = Model.ListStaff[i];
+                <tr>
+                    <td align="center" style="padding: 6px;">@(i + 1)</td>
+                    <td align="center" style="padding: 6px;">@item.FirstName</td>
+                    <td align="center" style="padding: 6px;">@item.LastName</td>
+                    <td align="center" style="padding: 6px;">@item.PayrollNumber</td>
+                    <td align="center" style="padding: 6px;">@item.DateExpire</td>
+                    <td align="center" style="padding: 6px;">@item.DateUpdated</td>
+                    <td align="center" valign="middle">
+                        <span class="glyphicon glyphicon-pencil update-staff" title="Update staff" data-id="@item.Id" style="color: #428bca;margin-right:20px"></span>
+                        <span class="glyphicon glyphicon-trash remove-staff" title="Remove staff" data-id="@item.Id" style="color: #428bca;"></span>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

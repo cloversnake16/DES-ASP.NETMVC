@@ -1,0 +1,171 @@
+﻿@using DESCore.Models
+
+@if (Session["UserModel"] != null)
+{
+    UserModel user = (UserModel)Session["UserModel"];
+
+    <div id="change_password_dialog" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:440px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#0094ff; color:#ffffff">
+                    <h4 id="message-title" class=" modal-title" style="text-align:center">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table" style="margin:0">
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">OldPassword</p></td>
+                            <td style="border:none"><input type="password" id="old_password" class="form-control" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">NewPassword</p></td>
+                            <td style="border:none"><input type="password" id="new_password" class="form-control" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">ConfirmPassword</p></td>
+                            <td style="border:none"><input type="password" id="confirm_password" class="form-control" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer" style="padding-top:0; margin-top:0; border:none">
+                    <p id="change_password_status" style="color:#ff0000"></p>
+                    <button type="button" class="btn btn-primary" style="width:100px" onclick="change_password()">Change</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="width:100px">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="user_settings_dialog" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:500px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#0094ff; color:#ffffff">
+                    <h4 id="message-title" class=" modal-title" style="text-align:center">User Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table" style="margin:0">
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">First Name</p></td>
+                            <td style="border:none"><input type="text" id="user_settings_firstname" class="form-control" value="@user.User.FirstName"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">Last Name</p></td>
+                            <td style="border:none"><input type="text" id="user_settings_lastname" class="form-control" value="@user.User.LastName" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">Address</p></td>
+                            <td style="border:none"><input type="text" id="user_settings_address" class="form-control" value="@user.User.Address" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">Email</p></td>
+                            <td style="border:none"><input type="text" id="user_settings_email" class="form-control" value="@user.User.Email" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border:none"><p style="margin-top:5px">Contact Number</p></td>
+                            <td style="border:none"><input type="text" id="user_settings_contactnumber" class="form-control" value="@user.User.ContactNumber" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer" style="padding-top:0; margin-top:0; border:none">
+                    <p id="user_settings_status" style="color:#ff0000"></p>
+                    <button type="button" class="btn btn-primary" style="width:100px" onclick="user_settings()">Set</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="width:100px">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="progress-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:400px">
+        <div class="modal-content">
+            <div id="progress-titlebar" class="modal-header" style="background-color:#0094ff;">
+                <p id="progress-title" class=" modal-title" style="text-align: center; font-size: medium; font-weight:bold; color:#ffffff"></p>
+            </div>
+            <div class="modal-body">
+                <p id="progress-contents" style="margin:0; text-align:center; font-size: medium"></p>
+            </div>
+            <div class="modal-footer" style="margin:0 ; border:none; padding:10px">
+                <button type="button" class="btn btn-default" onclick="stop_action()" style=" width:100px">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="load_template_dialog" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:390px">
+        <div class="modal-content">
+            <div class="modal-header" style="color:#ffffff; background-color:#ff6a00">
+                <h4 class="modal-title" style="text-align:center">Load template from server</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table" style="margin:0; padding:0">
+                    <tr>
+                        <td style="border:none"><h5>TemplateName: </h5></td>
+                        <td style="border:none">
+                            @if (Session["Template"] != null)
+                            {
+                                List<string> templates = (List<string>)Session["Template"];
+                                <select id="load_template_list" class="form-control" style="width:200px; padding:3px">
+                                    @foreach (var template in templates)
+                                    {
+                                        <option value="@template">@template</option>
+                                    }
+                                </select>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer" style="margin-top: 0; padding-top: 0; border: none">
+                <p id="load_template_status" style="color:#ff0000"></p>
+                <button type="button" id="load_template_exists" class="btn btn-danger" style="width:100px" onclick="load_template()">Load</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="save_template_dialog" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 390px">
+        <div class="modal-content">
+            <div class="modal-header" style="color:#ffffff; background-color:#ff6a00">
+                <h4 class="modal-title" style="text-align:center">Save template to server</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table" style="margin:0; padding:0">
+                    <tr>
+                        <td style="border:none"><h5>TemplateName: </h5></td>
+                        <td style="border:none">
+                            <input type="text" id="template_name" class="form-control" style="width:200px" onchange="template_name_change()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none"></td>
+                        <td style="border:none">
+                            @if (Session["Template"] != null)
+                            {
+                                List<string> templates = (List<string>)Session["Template"];
+                                if (templates.Count > 0)
+                                {
+                                    <select id="save_template_list" class="form-control" style="width: 200px; padding: 3px">
+                                        @foreach (var template in templates)
+                                        {
+                                            <option value="@template">@template</option>
+                                        }
+                                    </select>
+                                }
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer" style="margin-top: 0; padding-top: 0; border: none">
+                <p id="save_template_status" style="color:#ff0000"></p>
+                <button type="button" id="save_template_overwrite" class="btn btn-danger" style="width:100px; display:none" onclick="save_template()">Overwrite</button>
+                <button type="button" id="save_template_overwrite_no" class="btn btn-primary" style="width: 100px; display: none" onclick="overwrite_no()">No</button>
+                <button type="button" id="save_template_exists" class="btn btn-danger" style="width:100px" onclick="exists_template()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

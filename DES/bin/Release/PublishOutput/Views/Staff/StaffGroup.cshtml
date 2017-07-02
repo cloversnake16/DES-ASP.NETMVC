@@ -1,0 +1,103 @@
+﻿@using DESCore.Models
+@using DESCore.Helpers
+@model DES.Models.StaffModel
+
+<div style="margin:auto; width:1100px">
+    <table class="table">
+        <tr>
+            <td style="border:none">
+                <table>
+                    <tr>
+                        <td style="border:none; border-right:solid 1px #dddddd">
+                            <p>Staffs:</p>
+                            <select id="staff_group_members" size="12" style="width: 160px; height: 410px;" class="form-control">
+                                @if (Model != null && Model.ListStaffGroup != null)
+                                {
+                                    for (var i = 0; i < Model.ListStaffGroup.Count; i++)
+                                    {
+                                        <option style="padding:5px 2px" data-door1="@Model.ListStaffGroup[i].Door1" data-door2="@Model.ListStaffGroup[i].Door2"
+                                            data-door3="@Model.ListStaffGroup[i].Door3" data-door4="@Model.ListStaffGroup[i].Door4"
+                                            data-staffgroupname="@Model.ListStaffGroup[i].StaffGroupName" data-siteids="@Model.ListStaffGroup[i].SiteIds"
+                                            data-staff1="@Model.ListStaffGroup[i].StaffIds[0]" data-staff2="@Model.ListStaffGroup[i].StaffIds[1]"
+                                            data-staff3="@Model.ListStaffGroup[i].StaffIds[2]" data-staff4="@Model.ListStaffGroup[i].StaffIds[3]"
+                                            data-staff5="@Model.ListStaffGroup[i].StaffIds[4]" data-staff6="@Model.ListStaffGroup[i].StaffIds[5]"
+                                            data-staff7="@Model.ListStaffGroup[i].StaffIds[6]" data-staff8="@Model.ListStaffGroup[i].StaffIds[7]"
+                                            data-tag1="@Model.ListStaffGroup[i].Tags[0]" data-tag2="@Model.ListStaffGroup[i].Tags[1]"
+                                            data-tag3="@Model.ListStaffGroup[i].Tags[2]" data-tag4="@Model.ListStaffGroup[i].Tags[3]"
+                                            data-tag5="@Model.ListStaffGroup[i].Tags[4]" data-tag6="@Model.ListStaffGroup[i].Tags[5]"
+                                            data-tag7="@Model.ListStaffGroup[i].Tags[6]" data-tag8="@Model.ListStaffGroup[i].Tags[7]"
+                                            value="@Model.ListStaffGroup[i].Id">@Model.ListStaffGroup[i].StaffGroupName
+                                        </option>
+                                    }
+                                }
+                            </select>
+                        </td>
+                        <td style="border:none">
+                            <p>Tags:</p>
+                            <table id="staff_tags">
+                                @for (var i = 0; i < 8; i++)
+                                {
+                                    <tr>
+                                        <td style="border:none">
+                                            <input type="text" class="form-control" style="padding:0 5px; width: 120px;color:@ConvertHelper.GetTagColor(i); background-color:@ConvertHelper.GetTagBKColor(i);" />
+                                        </td>
+                                        <td style="border:none">
+                                            <select id="staff_members" style="width: 120px;" class="form-control">
+                                                @if (Model != null && Model.ListStaff != null)
+                                                {
+                                                    <option style="padding:5px 2px" value="0" />
+                                                    foreach (var staff in Model.ListStaff)
+                                                    {
+                                                        <option style="padding:5px 2px" value="@staff.Id">@staff.FirstName @staff.LastName</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                        <td style="border:none">
+                            <p>Sites:</p>
+                            <div style="border:solid 1px #eeeeee; width:160px; height:410px; overflow-y:scroll">
+                                <table id="staff_sites" class="table-condensed">
+                                    @{
+                                        var allSites = (List<Site>)Session["AllSites"];
+                                        foreach (var site in allSites)
+                                        {
+                                            <tr>
+                                                <td style="border:none; padding-left:5px"><input type="checkbox" data-siteid="@site.Id" /></td>
+                                                <td style="border:none">@site.SiteName</td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+                            </div>
+                        </td>
+                        <td style="border:none">
+                            <p>Door:</p>
+                            <div id="staff_doors">
+                                @for (var i = 0; i < 128; i++)
+                                {
+                                    <div class="div-staffdoor selected" style="text-align:center; width:34px">@(i + 1)</div>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td align="center" style="border:none">
+                            StaffGroup Name: <input id="staff_group_name" type="text" style="width:160px" />
+                            <button class="btn btn-primary" style="margin-right:10px;" onclick="create_staff_group()">Create StaffGroup</button>
+                            <button class="btn btn-primary" style="margin-right: 10px;" onclick="update_staff_group()">Update StaffGroup</button>
+                            <button class="btn btn-danger" style="margin-right: 20px;" onclick="remove_staff_group_modal()">Delete StaffGroup</button>
+                            <button class="btn btn-danger" onclick="program_staff_group_modal()">Program StaffGroup</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+

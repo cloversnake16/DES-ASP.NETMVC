@@ -1,0 +1,38 @@
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\DESCore.dll.config
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\DESCore.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\DESCore.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\EntityFramework.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\EntityFramework.SqlServer.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\EntityFramework.xml
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\bin\Debug\EntityFramework.SqlServer.xml
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\obj\Debug\DESCore.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESCore\obj\Debug\DESCore.pdb
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\DESCore.dll.config
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\DESCore.dll
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\DESCore.pdb
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\EntityFramework.dll
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\EntityFramework.SqlServer.dll
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\EntityFramework.xml
+D:\SGC\Work\DES\DES\DESCore\bin\Debug\EntityFramework.SqlServer.xml
+D:\SGC\Work\DES\DES\DESCore\obj\Debug\DESCore.dll
+D:\SGC\Work\DES\DES\DESCore\obj\Debug\DESCore.pdb
+D:\SGC\Work\DES\DES\DESCore\obj\Debug\DESCore.csprojResolveAssemblyReference.cache
+D:\Work\DES\DES\DESCore\bin\Debug\DESCore.dll.config
+D:\Work\DES\DES\DESCore\bin\Debug\DESCore.dll
+D:\Work\DES\DES\DESCore\bin\Debug\DESCore.pdb
+D:\Work\DES\DES\DESCore\bin\Debug\EntityFramework.dll
+D:\Work\DES\DES\DESCore\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\DES\DES\DESCore\bin\Debug\EntityFramework.xml
+D:\Work\DES\DES\DESCore\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\DES\DES\DESCore\obj\Debug\DESCore.dll
+D:\Work\DES\DES\DESCore\obj\Debug\DESCore.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\DESCore.dll.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\DESCore.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\DESCore.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\EntityFramework.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\EntityFramework.xml
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\obj\Debug\DESCore.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\obj\Debug\DESCore.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESCore\obj\Debug\DESCore.csprojResolveAssemblyReference.cache

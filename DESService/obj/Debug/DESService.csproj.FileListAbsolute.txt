@@ -1,0 +1,65 @@
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\DESService.exe.config
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\DESService.exe
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\DESService.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\DESCore.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\EntityFramework.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\EntityFramework.SqlServer.dll
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\DESCore.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\EntityFramework.xml
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\bin\Debug\EntityFramework.SqlServer.xml
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\obj\Debug\DESService.csprojResolveAssemblyReference.cache
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\obj\Debug\DESService.ProjectInstaller.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\obj\Debug\DESService.ServiceMain.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\obj\Debug\DESService.csproj.GenerateResource.Cache
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\obj\Debug\DESService.exe
+D:\SGC\Work\Paul Bennett\DES\DES\DESService\obj\Debug\DESService.pdb
+D:\SGC\Work\DES\DES\DESService\bin\Debug\DESService.exe.config
+D:\SGC\Work\DES\DES\DESService\bin\Debug\DESService.exe
+D:\SGC\Work\DES\DES\DESService\bin\Debug\DESService.pdb
+D:\SGC\Work\DES\DES\DESService\bin\Debug\DESCore.dll
+D:\SGC\Work\DES\DES\DESService\bin\Debug\EntityFramework.dll
+D:\SGC\Work\DES\DES\DESService\bin\Debug\EntityFramework.SqlServer.dll
+D:\SGC\Work\DES\DES\DESService\bin\Debug\DESCore.pdb
+D:\SGC\Work\DES\DES\DESService\bin\Debug\EntityFramework.xml
+D:\SGC\Work\DES\DES\DESService\bin\Debug\EntityFramework.SqlServer.xml
+D:\SGC\Work\DES\DES\DESService\obj\Debug\DESService.csprojResolveAssemblyReference.cache
+D:\SGC\Work\DES\DES\DESService\obj\Debug\DESService.ProjectInstaller.resources
+D:\SGC\Work\DES\DES\DESService\obj\Debug\DESService.ServiceMain.resources
+D:\SGC\Work\DES\DES\DESService\obj\Debug\DESService.csproj.GenerateResource.Cache
+D:\SGC\Work\DES\DES\DESService\obj\Debug\DESService.exe
+D:\SGC\Work\DES\DES\DESService\obj\Debug\DESService.pdb
+D:\Work\DES\DES\DESService\bin\Debug\DESService.exe.config
+D:\Work\DES\DES\DESService\bin\Debug\DESService.exe
+D:\Work\DES\DES\DESService\bin\Debug\DESService.pdb
+D:\Work\DES\DES\DESService\bin\Debug\DESCore.dll
+D:\Work\DES\DES\DESService\bin\Debug\EntityFramework.dll
+D:\Work\DES\DES\DESService\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\DES\DES\DESService\bin\Debug\DESCore.pdb
+D:\Work\DES\DES\DESService\bin\Debug\EntityFramework.xml
+D:\Work\DES\DES\DESService\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\DES\DES\DESService\obj\Debug\DESService.csprojResolveAssemblyReference.cache
+D:\Work\DES\DES\DESService\obj\Debug\DESService.ProjectInstaller.resources
+D:\Work\DES\DES\DESService\obj\Debug\DESService.ServiceMain.resources
+D:\Work\DES\DES\DESService\obj\Debug\DESService.csproj.GenerateResource.Cache
+D:\Work\DES\DES\DESService\obj\Debug\DESService.exe
+D:\Work\DES\DES\DESService\obj\Debug\DESService.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESService.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESService.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESService.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESService.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESService.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESCore.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\EntityFramework.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESCore.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\DESCore.dll.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\EntityFramework.xml
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.csprojResolveAssemblyReference.cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.ProjectInstaller.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.ServiceMain.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.csproj.GenerateResource.Cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Debug\DESService.pdb

@@ -1,0 +1,54 @@
+﻿@model DES.Models.UserViewModel
+
+@using (Html.BeginForm("Delete", "User", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <table class="table">
+        <tr>
+            <td align="center" style="border:none">
+                <table width="360" style="border: 1px solid #dddddd">
+                    <tr>
+                        <th style="background-color:#0094ff;text-align:center;color:#ffffff;font-size:large">Delete User</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px">
+                            <table class="table" style="margin:0;padding:0">
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">User name:</td>
+                                    <td align="left" style="border: none">
+                                        @Model.UserName
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border: none; vertical-align: middle; ">User type:</td>
+                                    <td align="left" style="border: none; ">
+                                        @Model.UserType
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border: none; vertical-align: middle; ">Email:</td>
+                                    <td align="left" style="border: none; ">
+                                        @Model.Email
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="border: none; padding: 0 30px">
+                            <input type="submit" value="Delete" class="btn btn-success" style="width: 120px;" />
+                            @Html.ActionLink("Cancel", "Index", "User", null, new { @class = "btn btn-default", @style = "width: 120px;" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="border: none; padding: 10px 20px">
+                            @if (Model != null)
+                            {
+                                <p style="color:#ff0000; margin-bottom:0">@Model.Error</p>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

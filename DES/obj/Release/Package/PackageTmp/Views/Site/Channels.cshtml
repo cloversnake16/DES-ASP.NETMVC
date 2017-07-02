@@ -1,0 +1,100 @@
+﻿@using DESCore.Models
+@using DESCore.Helpers
+@model DES.Models.SiteDataViewModel
+
+<div style="margin: 0 auto 20px auto; width: 300px;">
+    <button class="btn btn-success" style="margin-right: 10px; width:140px" onclick="retrieve_all_channel_site()">Retrieve from Site</button>
+    <button class="btn btn-danger" style="width: 140px" onclick="program_all_channel_site()">Program to Site</button>
+</div>
+<div style="margin: auto; width: 1130px;">
+    <table id="table-channels" class="table-bordered table-condensed">
+        <tr>
+            <th style="text-align:center" width="30px"><input type="checkbox" class="total-attach"/></th>
+            <th style="text-align:center" width="50px">Ch</th>
+            <th style="text-align:center" width="50px">Flat</th>
+            <th style="text-align:center" width="130px">PPP</th>
+            <th style="text-align:center" width="520px">Door</th>
+            <th style="text-align:center" width="200px">Tag</th>
+            <th style="text-align:center" width="50px">Action</th>
+            <th style="text-align:center" width="100px">Updated</th>
+        </tr>
+        @{
+            int[] reservedChannels = null;
+            if (Session["ReservedChannels"] != null) 
+            {
+                reservedChannels = (int[])Session["ReservedChannels"];
+            }
+            
+            for (int k = 0; k < Model.ChannelViewModels.Length; k++)
+            {
+                if (reservedChannels != null && reservedChannels.Contains(k)) 
+                {
+                    continue;
+                }
+                
+                var item = Model.ChannelViewModels[k];
+                <tr>
+                    <td style="width: 30px; text-align: center"><input type="checkbox" class="channel-attach" /></td>
+                    <td style="width: 50px; text-align: center">@item.ChannelIndex</td>
+                    <td><input type="text" style="width:50px" value="@item.Flat" /></td>
+                    <td><input type="text" style="width:130px" value="@item.PPP" /></td>
+                    <td style="width: 520px;font-size:0" align="left">
+                        <div class="glyphicon glyphicon-ok channel-door-all" style="color: #428bca; margin-left: 10px; margin-right: 10px" title="Select all doors"></div>
+                        <div class="glyphicon glyphicon-remove channel-door-clear" style="color: #428bca;margin-right:10px" title="Unselect all door"></div>
+                        @for (int i = 0; i < item.Doors.Length; i++)
+                            {
+                                for (int j = 0; j < 16; j++)
+                                {
+                                    if (item.Doors[i][j])
+                                    {
+                                        if (item.DoorVisibles[i])
+                                        {
+                                            <div title="@Model.DoorDescriptions[i * 16 + j]" class="boolspan selected visible">@(i * 16 + j + 1)</div>
+                                        }
+                                        else
+                                        {
+                                            <div title="@Model.DoorDescriptions[i * 16 + j]" class="boolspan selected">@(i * 16 + j + 1)</div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (item.DoorVisibles[i])
+                                        {
+                                            <div title="@Model.DoorDescriptions[i * 16 + j]" class="boolspan visible">@(i * 16 + j + 1)</div>
+                                        }
+                                        else
+                                        {
+                                            <div title="@Model.DoorDescriptions[i * 16 + j]" class="boolspan">@(i * 16 + j + 1)</div>
+                                        }
+                                    }
+                                }
+                            }
+                        <div class="glyphicon glyphicon-plus channel-door-add" style="color: #428bca;margin-left:10px" title="Add Door group"></div>
+                        <div class="glyphicon glyphicon-minus channel-door-delete" style="color: #428bca;margin-left:10px" title="Delte Door group"></div>
+                    </td>
+                    <td align="center" style="width:200px; padding:5px 0">
+                        @for (int i = 0; i < 8; i++)
+                            {
+                            <span class="tag-color" data-tag="@item.Tags[i]" style='color:@ConvertHelper.GetTagColor(i); background-color:@ConvertHelper.GetTagBKColor(i);padding:5px'>@(i + 1)</span>
+                            }
+                    </td>
+                    <td align="center" style="width:50px;">
+                        <span class="glyphicon glyphicon-save retrieve-channel-site" title="Retrieve from site" style="color: #428bca;margin-right:5px"></span>
+                        <span class="glyphicon glyphicon-open program-channel-site" title="Program to site" style="color: #428bca;"></span>
+                    </td>
+                    <td align="center" style="width:100px;">@item.DateUpdated</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+<div id="tag_popup" style="position:absolute; float:left; display:none; padding:10px; background-color:#dddddd; width:200px">
+    <input type="checkbox" id="tag-ishexadecimal" style="margin-right:10px" /><label>Hexadecimal</label>
+    <div id="tag_edit" style="padding-bottom:5px"><span style="padding:5px"></span><input type="text" value=""></div>
+    <p id="tag-info" style="color:#ff0000"></p>
+    <div class="pull-right">
+        <button class="tag-cancel" style="margin-right:10px">Cancel</button>
+        <button class="tag-set">Set</button>
+    </div>
+</div>

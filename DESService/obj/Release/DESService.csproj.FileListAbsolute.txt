@@ -1,0 +1,40 @@
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.exe.config
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.exe.manifest
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.application
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.exe
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.pdb
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESCore.dll
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.dll
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.SqlServer.dll
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESCore.pdb
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\DESCore.dll.config
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.xml
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.SqlServer.xml
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.csprojResolveAssemblyReference.cache
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.ProjectInstaller.resources
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.ServiceMain.resources
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.csproj.GenerateResource.Cache
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.exe.manifest
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.application
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.exe
+E:\Projects\2017 4 29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESService.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESCore.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.SqlServer.dll
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESCore.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\DESCore.dll.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.xml
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\bin\Release\EntityFramework.SqlServer.xml
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.csprojResolveAssemblyReference.cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.ProjectInstaller.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.ServiceMain.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.csproj.GenerateResource.Cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESService\obj\Release\DESService.pdb

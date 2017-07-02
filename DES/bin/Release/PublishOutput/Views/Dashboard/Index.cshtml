@@ -1,0 +1,110 @@
+﻿@using DESCore.Models
+@model DES.Models.DashboardViewModel
+
+<div style="margin:auto; width:1140px">
+    <table width="1140" style="margin-bottom:10px">
+        <tr>
+            <td align="left" style="border:0;">
+                @using (Html.BeginForm("Search", "Dashboard", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <table>
+                        <tr>
+                            <td style="border: 0;">
+                                <select name="QueryKey" class="form-control">
+                                    <option value=""></option>
+                                    @foreach (var item in Model.Query.QueryItems)
+                                    {
+                                        if (item == Model.Query.QueryKey)
+                                        {
+                                            <option value="@item" selected>@item</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td style="border: 0;">
+                                <input type="text" name="QueryValue" class="form-control" style="width:300px;" value="@Model.Query.QueryValue">
+                            </td>
+                            <td style="border: 0;">
+                                <input type="submit" value="Search" class="btn btn-primary" />
+                            </td>
+                            <td style="border: 0;">
+                                @Html.ActionLink("Clear", "ClearQuery", "Dashboard", null, new { @class = "btn btn-default" })
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </td>
+            <td style="border:none" align="right">
+                @Html.ActionLink("Connection Status", "ConnectionStatus", null, null, new { @class = "btn btn-primary", @style = "margin-right:5px;" })
+                @Html.ActionLink("Event Log", "EventLog", null, null, new { @class = "btn btn-primary", @style = "margin-right:5px;" })
+                @Html.ActionLink("Create site", "Create", null, null, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    </table>
+    <table width="1140" class="table-bordered table-striped">
+        <tr>
+            <th width="7%" style="text-align:center; padding:6px;">No</th>
+            <th width="10%" style="text-align:center; padding:6px;">UserName</th>
+            <th width="10%" style="text-align:center; padding:6px;">SiteName</th>
+            <th width="9%" style="text-align: center; padding: 6px;">Action</th>
+            <th width="10%" style="text-align: center; padding: 6px;">DeviceId</th>
+            <th width="11%" style="text-align: center; padding: 6px;">CustomerName</th>
+            <th width="11%" style="text-align: center; padding: 6px;">CustomerAddress</th>
+            <th width="11%" style="text-align: center; padding: 6px;">CustomerPhone</th>
+            <th width="7%" style="text-align: center; padding: 6px;">Modem</th>
+            <th width="7%" style="text-align: center; padding: 6px;">DES</th>
+            <th width="7%" style="text-align: center; padding: 6px;">Edit</th>
+        </tr>
+
+        @if (Model.Sites != null)
+        {
+            for (var i = 0; i < Model.Sites.Count(); i++)
+            {
+                var item = Model.Sites.ElementAt(i);
+                <tr>
+                    <td align="center" style="padding: 6px;">@(i + 1)</td>
+                    <td align="center" style="padding: 6px;">@item.UserName</td>
+                    <td align="center" style="padding: 6px;">@item.Site.SiteName</td>
+                    <td align="center" valign="middle">
+                        @Html.ActionLink(" ", "Resident", "Dashboard", new { SiteId = item.Site.Id }, new { @class = "glyphicon glyphicon-user", @title = "Residents", @style = "margin-right:10px" })
+                        @Html.ActionLink(" ", "OpenDoor", "Dashboard", new { SiteId = item.Site.Id }, new { @class = "glyphicon glyphicon-share", @title = "Open Door", @style = "margin-right:10px" })
+                        <span class="glyphicon glyphicon-cog move-site" data-id="@item.Site.Id" title="Move to site" style="color: #428bca;" />
+                    </td>
+                    <td align="center" style="padding: 6px;">@item.Site.DeviceId</td>
+                    <td align="center" style="padding: 6px;">@item.Site.CustomerName</td>
+                    <td align="center" style="padding: 6px;">@item.Site.CustomerAddress</td>
+                    <td align="center" style="padding: 6px;">@item.Site.CustomerPhone</td>
+                    <td align="center" style="padding: 6px;">
+                        @if (item.IsConnect)
+                        {
+                            <span class="glyphicon glyphicon-ok" title="Connected" style="color: #007f00;"> </span>
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-remove" title="Disconnected" style="color: #ff0000;"> </span>
+                        }
+                    </td>
+                    <td align="center" style="padding: 6px;">
+                        @if (!string.IsNullOrEmpty(item.ACMVersion))
+                        {
+                            <span class="glyphicon glyphicon-ok" title="Connected" style="color: #007f00;"> </span>
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-remove" title="Disconnected" style="color: #ff0000;"> </span>
+                        }
+                    </td>
+                    <td align="center" valign="middle">
+                        @Html.ActionLink(" ", "Update", "Dashboard", new { SiteId = item.Site.Id }, new { @class = "glyphicon glyphicon-pencil", @style = "margin-right: 10px", @title = "Update site" })
+                        @Html.ActionLink(" ", "Delete", "Dashboard", new { SiteId = item.Site.Id }, new { @class = "glyphicon glyphicon-trash", @title = "Delete site" })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

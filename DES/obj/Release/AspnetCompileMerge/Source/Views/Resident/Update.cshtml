@@ -1,0 +1,87 @@
+﻿@using DESCore.Helpers
+@model DES.Models.ResidentViewModel
+
+@using (Html.BeginForm("Update", "Resident", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <table class="table">
+        <tr>
+            <td align="center" style="border:none">
+                <table class="table-bordered" width="400">
+                    <tr>
+                        <th style="background-color:#0094ff;text-align:center;color:#ffffff;font-size:large">Update Resident</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="table" style="margin:0;padding:0">
+                                <tr>
+                                    <td align="right" style="width:140px; border:none">Resident Name</td>
+                                    <td align="left" style="width: 230px; border: none">
+                                        @Html.TextBoxFor(m => m.ResidentName)
+                                        <p>@Html.ValidationMessageFor(m => m.ResidentName)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Flat Number</td>
+                                    <td align="left" style="width: 230px; border: none; ">
+                                        @Html.TextBoxFor(m => m.FlatNumber)
+                                        <p>@Html.ValidationMessageFor(m => m.FlatNumber)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Home Tel.</td>
+                                    <td align="left" style="width: 230px; border: none; ">
+                                        @Html.TextBoxFor(m => m.HomeTel)
+                                        <p>@Html.ValidationMessageFor(m => m.HomeTel)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Mobile Tel.</td>
+                                    <td align="left" style="width: 230px; border: none; ">
+                                        @Html.TextBoxFor(m => m.MobileTel)
+                                        <p>@Html.ValidationMessageFor(m => m.MobileTel)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Email</td>
+                                    <td align="left" style="width: 230px; border: none; ">
+                                        @Html.TextBoxFor(m => m.Email)
+                                        <p>@Html.ValidationMessageFor(m => m.Email)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Tag</td>
+                                    <td align="left" style="width: 230px; border: none; ">
+                                        <select name="TagIndex" class="select-tagcolor" style="padding: 3px; width: 174px; background-color: @ConvertHelper.GetTagBKColor(Model.TagIndex); ">
+                                            @for (var i = 0; i < 8; i++)
+                                            {
+                                                if (i == Model.TagIndex)
+                                                {
+                                                    <option value="@i" style="background-color: @ConvertHelper.GetTagBKColor(i)" selected></option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@i" style="background-color: @ConvertHelper.GetTagBKColor(i)"></option>
+                                                }
+                                            }
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="border:none">
+                            <input type="submit" value="Update" id="submit" class="btn btn-success" style="width: 120px;" />
+                            @Html.ActionLink("Cancel", "Index", "Resident", null, new { @class = "btn btn-primary", @style = "width: 120px;" })
+                            @if (Model != null)
+                            {
+                                <p style="color: #0094ff; margin-bottom:0">@Model.Info</p>
+                                <p style="color:#ff0000; margin-bottom:0">@Model.Error</p>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

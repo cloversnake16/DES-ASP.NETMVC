@@ -1,0 +1,14 @@
+﻿<div class="navbar">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#view_reserved_channels">Reserved Channels</a></li>
+        <li><a data-toggle="tab" href="#view_alert_setting">Alert Setting</a></li>
+        <li><a data-toggle="tab" href="#view_door_description">Door Descriptions</a></li>
+    </ul>
+    <div class="tab-content" style="margin-top:20px">
+        <div id="view_reserved_channels" class="tab-pane fade in active">@Html.Partial("ReservedChannels")</div>
+        <div id="view_alert_setting" class="tab-pane fade">@Html.Partial("AlertSetting")</div>
+        <div id="view_door_description" class="tab-pane fade">@Html.Partial("DoorDescriptions")</div>
+    </div>
+</div>
+
+

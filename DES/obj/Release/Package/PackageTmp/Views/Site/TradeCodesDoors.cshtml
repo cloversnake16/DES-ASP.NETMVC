@@ -1,0 +1,75 @@
+﻿@using DESCore.Models
+@model DES.Models.SiteDataViewModel
+
+<table class="table">
+    <tr>
+        <td align="right" style="padding-right:30px; border-top:none; border-right: 1px solid #dddddd">
+            <table width="500">
+                <tr>
+                    <td align="right" style="border:none">
+                        <button class="btn btn-success" style="width:140px" onclick="retrieve_all_tradecode_site()">Retrieve from Site</button>
+                    </td>
+                    <td align="left" style="border:none">
+                        <button class="btn btn-danger" style="width: 140px" onclick="program_all_tradecode_site()">Program to Site</button>
+                    </td>
+                </tr>
+            </table>
+            <table id="table_tradecodes" width="500" class="table-bordered table-condensed">
+                <tr>
+                    <th style="text-align:center" width="60px">Trade</th>
+                    <th style="text-align:center" width="120px">TradeCode</th>
+                    <th style="text-align:center" width="120px">Schedule</th>
+                    <th style="text-align:center" width="100px">Action</th>
+                    <th style="text-align:center" width="100px">Updated</th>
+                </tr>
+                @foreach (var item in Model.TradeCodeViewModels)
+                {
+                    <tr>
+                        <td style="text-align:center">@item.TradeCodeIndex</td>
+                        <td><input type="text" style="width:80px" value="@item.PassNumber" /></td>
+                        <td><input type="text" style="width:80px" value="@item.ScheduleIndex" /></td>
+                        <td align="center">
+                            <span class="glyphicon glyphicon-save retrieve-tradecode-site" title="Retrieve from site" style="color: #428bca;margin-right:20px"></span>
+                            <span class="glyphicon glyphicon-open program-tradecode-site" title="Program to site" style="color: #428bca;"></span>
+                        </td>
+                        <td align="center" style="width:100px;">@item.DateUpdated</td>
+                   </tr>
+                }
+            </table>
+        </td>
+        <td align="left" style="padding-left:30px; border-top:none;">
+            <table width="500">
+                <tr>
+                    <td align="right" style="border:none">
+                        <button class="btn btn-success" style="width:140px" onclick="retrieve_all_door_site()">Retrieve from Site</button>
+                    </td>
+                    <td align="left" style="border:none">
+                        <button class="btn btn-danger" style="width: 140px" onclick="program_all_door_site()">Program to Site</button>
+                    </td>
+                </tr>
+            </table>
+            <table id="table_doors" width="500" class="table-bordered table-condensed">
+                <tr>
+                    <th style="text-align:center" width="60px">Door</th>
+                    <th style="text-align:center" width="120px">LockTime(s)</th>
+                    <th style="text-align:center" width="120px">Schedule</th>
+                    <th style="text-align:center" width="100px">Action</th>
+                    <th style="text-align:center" width="100px">Updated</th>
+                </tr>
+                @foreach (var item in Model.DoorViewModels)
+                {
+                    <tr>
+                        <td style="text-align:center" title="@Model.DoorDescriptions[item.DoorIndex - 1]">@item.DoorIndex</td>
+                        <td><input type="text" style="width:80px" value="@item.LockTimeout" /></td>
+                        <td><input type="text" style="width:80px" value="@item.ScheduleIndex" /></td>
+                        <td align="center">
+                            <span class="glyphicon glyphicon-save retrieve-door-site" title="Retrieve from site" style="color: #428bca; margin-right: 20px"></span>
+                            <span class="glyphicon glyphicon-open program-door-site" title="Program to site" style="color: #428bca;"></span>
+                        </td>
+                        <td align="center" style="width:100px;">@item.DateUpdated</td>
+                   </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>

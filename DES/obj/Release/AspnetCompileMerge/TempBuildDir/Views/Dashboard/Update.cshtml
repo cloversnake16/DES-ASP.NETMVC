@@ -1,0 +1,96 @@
+﻿@model DES.Models.SiteViewModel
+
+@using (Html.BeginForm("Update", "User", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <table class="table">
+        <tr>
+            <td align="center" style="border:none">
+                <table width="460" style="border: 1px solid #dddddd">
+                    <tr>
+                        <th style="background-color:#0094ff;text-align:center;color:#ffffff;font-size:large">Update Site</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px">
+                            <table class="table" style="margin:0;padding:0">
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Site name:</td>
+                                    <td align="left" style="border: none">
+                                        @Model.SiteName
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">DeviceId:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.DeviceId, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Customer name:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.CustomerName, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Customer address:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.CustomerAddress, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Customer phone:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.CustomerPhone, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Address2:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.Address2, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Area:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.Area, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Town:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.Town, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">City:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="border:none; vertical-align:middle; ">Country:</td>
+                                    <td align="left" style="border: none">
+                                        @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="border: none; padding: 0 30px">
+                            <input type="submit" value="Update" class="btn btn-success" style="width: 120px;" />
+                            @Html.ActionLink("Cancel", "Index", "Dashboard", null, new { @class = "btn btn-default", @style = "width: 120px;" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="border: none; padding: 10px 20px">
+                            @if (Model != null)
+                            {
+                                <p style="color:#ff0000; margin-bottom:0">@Model.Error</p>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

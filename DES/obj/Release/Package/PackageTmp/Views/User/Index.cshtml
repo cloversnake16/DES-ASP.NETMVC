@@ -1,0 +1,83 @@
+﻿@using DESCore.Models
+@model DES.Models.UsersViewModel
+
+<div style="margin:auto; width:1140px">
+    <table width="1140" style="margin-bottom:10px">
+        <tr>
+            <td align="left" style="border:0;">
+                @using (Html.BeginForm("Search", "User", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <table>
+                        <tr>
+                            <td style="border: 0;">
+                                <select name="QueryKey" class="form-control">
+                                    <option value=""></option>
+                                    @foreach (var item in Model.Query.QueryItems)
+                                    {
+                                        if (item == Model.Query.QueryKey)
+                                        {
+                                            <option value="@item" selected>@item</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td style="border: 0;">
+                                <input type="text" name="QueryValue" class="form-control" style="width:300px;" value="@Model.Query.QueryValue">
+                            </td>
+                            <td style="border: 0;">
+                                <input type="submit" value="Search" class="btn btn-primary" />
+                            </td>
+                            <td style="border: 0;">
+                                @Html.ActionLink("Clear", "ClearQuery", "User", null, new { @class = "btn btn-default" })
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </td>
+            <td align="right" style="border:0;">
+                @Html.ActionLink("Create user", "Create", "User", null, new { @class = "btn btn-primary", @title = "Create user" })
+            </td>
+        </tr>
+    </table>
+    <table width="1140" class="table-bordered table-striped">
+        <tr>
+            <th width="8%" style="text-align: center; padding: 6px;">No</th>
+            <th width="10%" style="text-align: center; padding: 6px;">UserName</th>
+            <th width="10%" style="text-align: center; padding: 6px;">UserType</th>
+            <th width="12%" style="text-align: center; padding: 6px;">FirstName</th>
+            <th width="12%" style="text-align: center; padding: 6px;">LastName</th>
+            <th width="15%" style="text-align: center; padding: 6px;">Address</th>
+            <th width="15%" style="text-align: center; padding: 6px;">Email</th>
+            <th width="10%" style="text-align: center; padding: 6px;">PhoneNumber</th>
+            <th width="8%" style="text-align: center; padding: 6px;">Action</th>
+        </tr>
+
+        @if (Model.Users != null)
+        {
+            for (int i = 0; i < Model.Users.Count(); i++)
+            {
+                var item = Model.Users.ElementAt(i);
+                <tr>
+                    <td align="center" style="padding: 6px;">@(i + 1)</td>
+                    <td align="center" style="padding: 6px;">@item.User.UserName</td>
+                    <td align="center" style="padding: 6px;">@item.UserTypeName</td>
+                    <td align="center" style="padding: 6px;">@item.User.FirstName</td>
+                    <td align="center" style="padding: 6px;">@item.User.LastName</td>
+                    <td align="center" style="padding: 6px;">@item.User.Address</td>
+                    <td align="center" style="padding: 6px;">@item.User.Email</td>
+                    <td align="center" style="padding: 6px;">@item.User.ContactNumber</td>
+                    <td align="center" style="padding: 6px;" valign="middle">
+                        @Html.ActionLink(" ", "Update", "User", new { UserId = @item.User.Id }, new { @class = "glyphicon glyphicon-pencil", @style = "margin-right: 10px", @title = "Update user" })
+                        @Html.ActionLink(" ", "Delete", "User", new { UserId = @item.User.Id }, new { @class = "glyphicon glyphicon-trash", @style = "margin-right: 10px", @title = "Delete user" })
+                        @Html.ActionLink(" ", "ResendPassword", "User", new { UserId = @item.User.Id }, new { @class = "glyphicon glyphicon-envelope", @title = "Resend password to email" })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BackTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="DeviceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="WorkType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkStatus" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkItem" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkIndex" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Channel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="ChannelIndex" Type="Int32" Nullable="false" />
+    <Property Name="Flat" Type="Int32" Nullable="false" />
+    <Property Name="PPP" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Door1" Type="Int64" Nullable="false" />
+    <Property Name="Door2" Type="Int64" Nullable="false" />
+    <Property Name="Tag1" Type="Int32" Nullable="false" />
+    <Property Name="Tag2" Type="Int32" Nullable="false" />
+    <Property Name="Tag3" Type="Int32" Nullable="false" />
+    <Property Name="Tag4" Type="Int32" Nullable="false" />
+    <Property Name="Tag5" Type="Int32" Nullable="false" />
+    <Property Name="Tag6" Type="Int32" Nullable="false" />
+    <Property Name="Tag7" Type="Int32" Nullable="false" />
+    <Property Name="Tag8" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Description">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Index" Type="Int32" Nullable="false" />
+    <Property Name="Contents" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IpAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACMVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InBound" Type="Int64" Nullable="false" />
+    <Property Name="OutBound" Type="Int64" Nullable="false" />
+    <Property Name="IsConnect" Type="Boolean" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Door">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="DoorIndex" Type="Int32" Nullable="false" />
+    <Property Name="LockTimeout" Type="Int32" Nullable="false" />
+    <Property Name="ScheduleIndex" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="EventLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="SiteId" Type="Int32" />
+    <Property Name="Event" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="Request" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Response" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contents" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="RemoteSiteEventLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="SiteId" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="EventNumber" Type="Int32" Nullable="false" />
+    <Property Name="DateEvent" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateACM" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="Request" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Response" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Resident">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="Int32" Nullable="false" />
+    <Property Name="FlatNumber" Type="Int32" Nullable="false" />
+    <Property Name="ResidentName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HomeTel" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MobileTel" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TagIndex" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="ScheduleIndex" Type="Int32" Nullable="false" />
+    <Property Name="Start1Hour" Type="Int32" Nullable="false" />
+    <Property Name="Start1Minute" Type="Int32" Nullable="false" />
+    <Property Name="End1Hour" Type="Int32" Nullable="false" />
+    <Property Name="End1Minute" Type="Int32" Nullable="false" />
+    <Property Name="Day1" Type="Int32" Nullable="false" />
+    <Property Name="Start2Hour" Type="Int32" Nullable="false" />
+    <Property Name="Start2Minute" Type="Int32" Nullable="false" />
+    <Property Name="End2Hour" Type="Int32" Nullable="false" />
+    <Property Name="End2Minute" Type="Int32" Nullable="false" />
+    <Property Name="Day2" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CheckPeriod" Type="Int32" Nullable="false" />
+    <Property Name="MaxDataSize" Type="Int32" Nullable="false" />
+    <Property Name="MaxEventlogSize" Type="Int32" Nullable="false" />
+    <Property Name="DateReset" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ReservedChannel" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="DeviceId" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerPhone" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Area" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Town" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Site_ToUser" FromRole="Site" ToRole="User" />
+  </EntityType>
+  <EntityType Name="SiteData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="SiteId" Type="Int32" Nullable="false" />
+    <Property Name="SiteDataType" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TemplateName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsCompleted" Type="Boolean" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PayrollNumber" Type="Int32" Nullable="false" />
+    <Property Name="DateExpire" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="StaffAccess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="StaffAccessIndex" Type="Int32" Nullable="false" />
+    <Property Name="AccessLevel" Type="Int32" Nullable="false" />
+    <Property Name="PassNumber" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="StaffGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StaffGroupName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StaffId1" Type="Int32" Nullable="false" />
+    <Property Name="StaffId2" Type="Int32" Nullable="false" />
+    <Property Name="StaffId3" Type="Int32" Nullable="false" />
+    <Property Name="StaffId4" Type="Int32" Nullable="false" />
+    <Property Name="StaffId5" Type="Int32" Nullable="false" />
+    <Property Name="StaffId6" Type="Int32" Nullable="false" />
+    <Property Name="StaffId7" Type="Int32" Nullable="false" />
+    <Property Name="StaffId8" Type="Int32" Nullable="false" />
+    <Property Name="Tag1" Type="Int32" Nullable="false" />
+    <Property Name="Tag2" Type="Int32" Nullable="false" />
+    <Property Name="Tag3" Type="Int32" Nullable="false" />
+    <Property Name="Tag4" Type="Int32" Nullable="false" />
+    <Property Name="Tag5" Type="Int32" Nullable="false" />
+    <Property Name="Tag6" Type="Int32" Nullable="false" />
+    <Property Name="Tag7" Type="Int32" Nullable="false" />
+    <Property Name="Tag8" Type="Int32" Nullable="false" />
+    <Property Name="Door1" Type="Int64" Nullable="false" />
+    <Property Name="Door2" Type="Int64" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="StaffGroupSite">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StaffGroupId" Type="Int32" Nullable="false" />
+    <Property Name="SiteId" Type="Int32" Nullable="false" />
+    <Property Name="ChannelIndex" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SystemOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="Option1" Type="Int32" Nullable="false" />
+    <Property Name="Option2" Type="Int32" Nullable="false" />
+    <Property Name="TradeSchedule" Type="Int32" Nullable="false" />
+    <Property Name="RingTimeout" Type="Int32" Nullable="false" />
+    <Property Name="AudioTimeout" Type="Int32" Nullable="false" />
+    <Property Name="WardenChannel" Type="Int32" Nullable="false" />
+    <Property Name="CustomerNo" Type="Int32" Nullable="false" />
+    <Property Name="SiteNo" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="TradeCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteDataId" Type="Int32" Nullable="false" />
+    <Property Name="TradeCodeIndex" Type="Int32" Nullable="false" />
+    <Property Name="PassNumber" Type="Int32" Nullable="false" />
+    <Property Name="ScheduleIndex" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DefaultPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="UserTypeId" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsLogin" Type="Boolean" Nullable="false" />
+    <Property Name="ViewP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EditP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ReadP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WriteP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Sites" Relationship="Self.FK_Site_ToUser" FromRole="User" ToRole="Site" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_User_ToUserType" FromRole="User" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_ToUserType" FromRole="UserType" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Site_ToUser">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Site" Type="Self.Site" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Site">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ToUserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DESEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BackTasks" EntityType="Self.BackTask" />
+    <EntitySet Name="Channels" EntityType="Self.Channel" />
+    <EntitySet Name="Descriptions" EntityType="Self.Description" />
+    <EntitySet Name="Devices" EntityType="Self.Device" />
+    <EntitySet Name="Doors" EntityType="Self.Door" />
+    <EntitySet Name="EventLogs" EntityType="Self.EventLog" />
+    <EntitySet Name="Notifications" EntityType="Self.Notification" />
+    <EntitySet Name="RemoteSiteEventLogs" EntityType="Self.RemoteSiteEventLog" />
+    <EntitySet Name="Residents" EntityType="Self.Resident" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+    <EntitySet Name="Settings" EntityType="Self.Setting" />
+    <EntitySet Name="Sites" EntityType="Self.Site" />
+    <EntitySet Name="SiteDatas" EntityType="Self.SiteData" />
+    <EntitySet Name="Staffs" EntityType="Self.Staff" />
+    <EntitySet Name="StaffAccesses" EntityType="Self.StaffAccess" />
+    <EntitySet Name="StaffGroups" EntityType="Self.StaffGroup" />
+    <EntitySet Name="StaffGroupSites" EntityType="Self.StaffGroupSite" />
+    <EntitySet Name="SystemOptions" EntityType="Self.SystemOption" />
+    <EntitySet Name="TradeCodes" EntityType="Self.TradeCode" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="FK_Site_ToUser" Association="Self.FK_Site_ToUser">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Site" EntitySet="Sites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ToUserType" Association="Self.FK_User_ToUserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

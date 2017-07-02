@@ -1,0 +1,48 @@
+﻿@model DES.Models.LoginViewModel
+
+<div style="margin: 40px auto; width: 300px;">
+    <table class="table table-bordered" style="margin-top:20px;">
+        <tr>
+            <th style="background-color:#0094ff;text-align:center;color:#ffffff;font-size:large">Login</th>
+        </tr>
+        <tr>
+            <td>
+                <div style="margin: 15px auto 0 auto; width: 260px;">
+                    @using (Html.BeginForm("Login", "Account", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.ValidationSummary()
+                        <p id="login_status"></p>
+                        <table id="table_login"class="table" style="margin:0;padding:0">
+                            <tr>
+                                <td align="center" style="border:none">@Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName" })</td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="border:none">@Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder="Password" })</td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding-top: 15px; border: none"><input type="submit" value="Log in" id="submit" class="btn btn-success" style="width: 140px;" /></td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="border:none"><a style="font-size:small" id="forgot_password">Forgot Password?</a></td>
+                            </tr>
+                        </table>
+                    }
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $('#Password').keypress(
+            function (e) {
+                if (e.which == 13) {
+                    $('#submit').trigger('click');
+                }
+            }
+        );
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

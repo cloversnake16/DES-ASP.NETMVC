@@ -1,0 +1,58 @@
+﻿<div class="navbar" style="margin-bottom:10px">
+    <table width="1100" class="table-bordered">
+        <tr>
+            <td align="center" style="background-color:#eeeeee"><h5>Database Operations</h5></td>
+            <td align="center" style="padding:10px">
+                <button class="btn btn-success" style="margin-right: 10px;" onclick="load_last_programed()">Load LastProgramed</button>
+                <button class="btn btn-success" style="margin-right: 10px;" onclick="load_last_saved()">Load LastSaved</button>
+                <button class="btn btn-success" style="margin-right: 10px;" onclick="exists_templates()">Load template</button>
+                <button class="btn btn-danger" style="margin-right: 10px;" onclick="save_last_saved()">Save to database</button>
+                <button class="btn btn-danger" onclick="save_template_dialog()">Save as template</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:#eeeeee"><h5>Remote Site Operations</h5></td>
+            <td align="center" style="padding:10px">
+                <button class="btn btn-success" style="margin-right: 10px;" onclick="retrieve_remote_site()">Retrieve from Site</button>
+                <button class="btn btn-danger" style="margin-right: 10px;" onclick="exists_back_task()">Program to Site</button>
+                @Html.ActionLink("Local EventLog", "LocalEventLog", "Site", null, new { @class = "btn btn-success", @style = "margin-right: 10px;" })
+                @Html.ActionLink("Remote EventLog", "RemoteEventLog", "Site", null, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="navbar">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#view_channel">Channels</a></li>
+        <li><a data-toggle="tab" href="#view_schedule">Schedules</a></li>
+        <li><a data-toggle="tab" href="#view_tradecode_door">TradeCodes & Doors</a></li>
+        <li><a data-toggle="tab" href="#view_staffaccess_options">StaffAccess & Options</a></li>
+        <li><a data-toggle="tab" href="#view_remote_events">Enable Events & DateTime</a></li>
+    </ul>
+    <div class="tab-content site-data" style="margin-top:20px">
+        <div id="view_channel" class="tab-pane fade in active">@Html.Partial("Channels")</div>
+        <div id="view_schedule" class="tab-pane fade">@Html.Partial("Schedules")</div>
+        <div id="view_tradecode_door" class="tab-pane fade">@Html.Partial("TradeCodesDoors")</div>
+        <div id="view_staffaccess_options" class="tab-pane fade">@Html.Partial("StaffAccessOptions")</div>
+        <div id="view_remote_events" class="tab-pane fade">@Html.Partial("RemoteEvents")</div>
+    </div>
+</div>
+
+<div id="prepare-parameters-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:400px">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#ff0000;">
+                <p style="text-align: center; font-size: medium;color:#ffffff"><b>Program parameters</b></p>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: medium">Are you sure to program to remote site?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-prepare" style=" width:100px" onclick="prepare_remote_site()">Program</button>
+                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal" style=" width:100px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+

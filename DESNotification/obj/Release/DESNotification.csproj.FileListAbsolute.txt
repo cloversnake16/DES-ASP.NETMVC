@@ -1,0 +1,17 @@
+D:\SGC\Work\Paul Bennett\DES\DES\DESNotification\bin\Release\DESNotification.exe.config
+D:\SGC\Work\Paul Bennett\DES\DES\Release\DESNotification.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Release\DESNotification.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Release\DESNotification.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Release\DESNotification.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Release\DESNotification.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\bin\Release\DESNotification.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.csprojResolveAssemblyReference.cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.Controls.NotifyControl.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.FormNotification.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.NotificationInstaller.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.Properties.Resources.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.csproj.GenerateResource.Cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.exe.manifest
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.application
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESNotification\obj\Release\DESNotification.pdb

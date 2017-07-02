@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DESModelStoreContainer" CdmEntityContainer="DESEntities">
+    <EntitySetMapping Name="BackTasks">
+      <EntityTypeMapping TypeName="DESModel.BackTask">
+        <MappingFragment StoreEntitySet="BackTask">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="WorkItem" ColumnName="WorkItem" />
+          <ScalarProperty Name="WorkIndex" ColumnName="WorkIndex" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Channels">
+      <EntityTypeMapping TypeName="DESModel.Channel">
+        <MappingFragment StoreEntitySet="Channel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="ChannelIndex" ColumnName="ChannelIndex" />
+          <ScalarProperty Name="Flat" ColumnName="Flat" />
+          <ScalarProperty Name="PPP" ColumnName="PPP" />
+          <ScalarProperty Name="Door1" ColumnName="Door1" />
+          <ScalarProperty Name="Door2" ColumnName="Door2" />
+          <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+          <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+          <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+          <ScalarProperty Name="Tag4" ColumnName="Tag4" />
+          <ScalarProperty Name="Tag5" ColumnName="Tag5" />
+          <ScalarProperty Name="Tag6" ColumnName="Tag6" />
+          <ScalarProperty Name="Tag7" ColumnName="Tag7" />
+          <ScalarProperty Name="Tag8" ColumnName="Tag8" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Descriptions">
+      <EntityTypeMapping TypeName="DESModel.Description">
+        <MappingFragment StoreEntitySet="Description">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="DESModel.Device">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="ACMVersion" ColumnName="ACMVersion" />
+          <ScalarProperty Name="InBound" ColumnName="InBound" />
+          <ScalarProperty Name="OutBound" ColumnName="OutBound" />
+          <ScalarProperty Name="IsConnect" ColumnName="IsConnect" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doors">
+      <EntityTypeMapping TypeName="DESModel.Door">
+        <MappingFragment StoreEntitySet="Door">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="DoorIndex" ColumnName="DoorIndex" />
+          <ScalarProperty Name="LockTimeout" ColumnName="LockTimeout" />
+          <ScalarProperty Name="ScheduleIndex" ColumnName="ScheduleIndex" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventLogs">
+      <EntityTypeMapping TypeName="DESModel.EventLog">
+        <MappingFragment StoreEntitySet="EventLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="DESModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RemoteSiteEventLogs">
+      <EntityTypeMapping TypeName="DESModel.RemoteSiteEventLog">
+        <MappingFragment StoreEntitySet="RemoteSiteEventLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EventNumber" ColumnName="EventNumber" />
+          <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
+          <ScalarProperty Name="DateACM" ColumnName="DateACM" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Residents">
+      <EntityTypeMapping TypeName="DESModel.Resident">
+        <MappingFragment StoreEntitySet="Resident">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="FlatNumber" ColumnName="FlatNumber" />
+          <ScalarProperty Name="ResidentName" ColumnName="ResidentName" />
+          <ScalarProperty Name="HomeTel" ColumnName="HomeTel" />
+          <ScalarProperty Name="MobileTel" ColumnName="MobileTel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TagIndex" ColumnName="TagIndex" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="DESModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="ScheduleIndex" ColumnName="ScheduleIndex" />
+          <ScalarProperty Name="Start1Hour" ColumnName="Start1Hour" />
+          <ScalarProperty Name="Start1Minute" ColumnName="Start1Minute" />
+          <ScalarProperty Name="End1Hour" ColumnName="End1Hour" />
+          <ScalarProperty Name="End1Minute" ColumnName="End1Minute" />
+          <ScalarProperty Name="Day1" ColumnName="Day1" />
+          <ScalarProperty Name="Start2Hour" ColumnName="Start2Hour" />
+          <ScalarProperty Name="Start2Minute" ColumnName="Start2Minute" />
+          <ScalarProperty Name="End2Hour" ColumnName="End2Hour" />
+          <ScalarProperty Name="End2Minute" ColumnName="End2Minute" />
+          <ScalarProperty Name="Day2" ColumnName="Day2" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="DESModel.Setting">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CheckPeriod" ColumnName="CheckPeriod" />
+          <ScalarProperty Name="MaxDataSize" ColumnName="MaxDataSize" />
+          <ScalarProperty Name="MaxEventlogSize" ColumnName="MaxEventlogSize" />
+          <ScalarProperty Name="DateReset" ColumnName="DateReset" />
+          <ScalarProperty Name="ReservedChannel" ColumnName="ReservedChannel" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="DESModel.Site">
+        <MappingFragment StoreEntitySet="Site">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteDatas">
+      <EntityTypeMapping TypeName="DESModel.SiteData">
+        <MappingFragment StoreEntitySet="SiteData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="SiteDataType" ColumnName="SiteDataType" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="DESModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PayrollNumber" ColumnName="PayrollNumber" />
+          <ScalarProperty Name="DateExpire" ColumnName="DateExpire" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffAccesses">
+      <EntityTypeMapping TypeName="DESModel.StaffAccess">
+        <MappingFragment StoreEntitySet="StaffAccess">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="StaffAccessIndex" ColumnName="StaffAccessIndex" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+          <ScalarProperty Name="PassNumber" ColumnName="PassNumber" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffGroups">
+      <EntityTypeMapping TypeName="DESModel.StaffGroup">
+        <MappingFragment StoreEntitySet="StaffGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StaffGroupName" ColumnName="StaffGroupName" />
+          <ScalarProperty Name="StaffId1" ColumnName="StaffId1" />
+          <ScalarProperty Name="StaffId2" ColumnName="StaffId2" />
+          <ScalarProperty Name="StaffId3" ColumnName="StaffId3" />
+          <ScalarProperty Name="StaffId4" ColumnName="StaffId4" />
+          <ScalarProperty Name="StaffId5" ColumnName="StaffId5" />
+          <ScalarProperty Name="StaffId6" ColumnName="StaffId6" />
+          <ScalarProperty Name="StaffId7" ColumnName="StaffId7" />
+          <ScalarProperty Name="StaffId8" ColumnName="StaffId8" />
+          <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+          <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+          <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+          <ScalarProperty Name="Tag4" ColumnName="Tag4" />
+          <ScalarProperty Name="Tag5" ColumnName="Tag5" />
+          <ScalarProperty Name="Tag6" ColumnName="Tag6" />
+          <ScalarProperty Name="Tag7" ColumnName="Tag7" />
+          <ScalarProperty Name="Tag8" ColumnName="Tag8" />
+          <ScalarProperty Name="Door1" ColumnName="Door1" />
+          <ScalarProperty Name="Door2" ColumnName="Door2" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffGroupSites">
+      <EntityTypeMapping TypeName="DESModel.StaffGroupSite">
+        <MappingFragment StoreEntitySet="StaffGroupSite">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StaffGroupId" ColumnName="StaffGroupId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="ChannelIndex" ColumnName="ChannelIndex" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemOptions">
+      <EntityTypeMapping TypeName="DESModel.SystemOption">
+        <MappingFragment StoreEntitySet="SystemOption">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="Option1" ColumnName="Option1" />
+          <ScalarProperty Name="Option2" ColumnName="Option2" />
+          <ScalarProperty Name="TradeSchedule" ColumnName="TradeSchedule" />
+          <ScalarProperty Name="RingTimeout" ColumnName="RingTimeout" />
+          <ScalarProperty Name="AudioTimeout" ColumnName="AudioTimeout" />
+          <ScalarProperty Name="WardenChannel" ColumnName="WardenChannel" />
+          <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+          <ScalarProperty Name="SiteNo" ColumnName="SiteNo" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TradeCodes">
+      <EntityTypeMapping TypeName="DESModel.TradeCode">
+        <MappingFragment StoreEntitySet="TradeCode">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteDataId" ColumnName="SiteDataId" />
+          <ScalarProperty Name="TradeCodeIndex" ColumnName="TradeCodeIndex" />
+          <ScalarProperty Name="PassNumber" ColumnName="PassNumber" />
+          <ScalarProperty Name="ScheduleIndex" ColumnName="ScheduleIndex" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DESModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DefaultPassword" ColumnName="DefaultPassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+          <ScalarProperty Name="ViewP" ColumnName="ViewP" />
+          <ScalarProperty Name="EditP" ColumnName="EditP" />
+          <ScalarProperty Name="ReadP" ColumnName="ReadP" />
+          <ScalarProperty Name="WriteP" ColumnName="WriteP" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="DESModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="DESModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

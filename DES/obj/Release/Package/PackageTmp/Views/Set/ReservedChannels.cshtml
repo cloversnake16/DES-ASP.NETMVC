@@ -1,0 +1,16 @@
+﻿@model DES.Models.SetViewModel
+
+<div style="margin:auto; width:1100px" id="div-channels">
+    @for (var i = 0; i < 16; i++)
+    {
+        if (Model != null && (Model.ReservedChannels & (1 << i)) != 0)
+        {
+            <div class="div-channel selected" style="text-align:center; width:80px">@(i * 16 + 1) - @(i * 16 + 16)</div>
+        }
+        else
+        {
+            <div class="div-channel" style="text-align:center; width:80px">@(i * 16 + 1) - @(i * 16 + 16)</div>
+        }
+    }
+    <button class="btn btn-primary" style="margin-left: 40px;" onclick="update_reserved_channels()">Update</button>
+</div>

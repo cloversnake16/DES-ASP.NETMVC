@@ -1,0 +1,123 @@
+﻿@using DESCore.Models
+@model DES.Models.SiteDataViewModel
+
+<table class="table">
+    <tr>
+        <td align="right" style="padding-right:30px; border-top:none; border-right: 1px solid #dddddd">
+            <table width="540">
+                <tr>
+                    <td align="right" style="border:none">
+                        <button class="btn btn-success" style="width:140px" onclick="retrieve_all_staff_access_site()">Retrieve from Site</button>
+                    </td>
+                    <td align="left" style="border:none">
+                        <button class="btn btn-danger" style="width: 140px" onclick="program_all_staff_access_site()">Program to Site</button>
+                    </td>
+                </tr>
+            </table>
+            <table id="table-staffaccess" class="table-bordered table-condensed" width="540">
+                <tr>
+                    <th style="text-align:center" width="60px">Staff</th>
+                    <th style="text-align:center" width="140px">Access Level</th>
+                    <th style="text-align:center" width="140px">Pass Number</th>
+                    <th style="text-align:center" width="100px">Action</th>
+                    <th style="text-align:center" width="100px">Updated</th>
+                </tr>
+                @foreach (var item in Model.StaffAccessViewModels)
+                {
+                    <tr>
+                        <td style="text-align:center">@item.StaffAccessIndex</td>
+                        <td align="center">
+                            <select style="width: 140px">
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    string text;
+                                    if (i == 0)
+                                    {
+                                        text = "Default";
+                                    }
+                                    else if (i == 1)
+                                    {
+                                        text = "Tags";
+                                    }
+                                    else if (i == 2)
+                                    {
+                                        text = "Tags and Times";
+                                    }
+                                    else
+                                    {
+                                        text = "SysAdmin";
+                                    }
+                                    
+                                    if (i == item.AccessLevel)
+                                    {
+                                        <option value="@i" selected>@text</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@i">@text</option>
+                                    }
+                                }
+                            </select>
+                        </td>
+                        <td><input type="text" style="width:140px" value="@item.PassNumber" /></td>
+                        <td align="center">
+                            <span class="glyphicon glyphicon-save retrieve-staff-access-site" title="Retrieve from site" style="color: #428bca;margin-right:20px"></span>
+                            <span class="glyphicon glyphicon-open program-staff-access-site" title="Program to site" style="color: #428bca;"></span>
+                        </td>
+                        <td align="center" style="width:100px;">@item.DateUpdated</td>
+                    </tr>
+                }
+            </table>
+        </td>
+        <td align="left" style="padding-left:30px; border-top:none;">
+            <table width="340">
+                <tr>
+                    <td align="right" style="border:none">
+                        <button class="btn btn-success" style="width:140px" onclick="retrieve_all_system_option_site()">Retrieve from Site</button>
+                    </td>
+                    <td align="left" style="border:none">
+                        <button class="btn btn-danger" style="width: 140px" onclick="program_all_system_option_site()">Program to Site</button>
+                    </td>
+                </tr>
+            </table>
+            <table id="table_system_options" class="table-bordered" width="340">
+                <tr>
+                    <td align="right">Option1</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.Option1" /></td>
+                </tr>
+                <tr>
+                    <td align="right">Option2</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.Option2" /></td>
+                </tr>
+                <tr>
+                    <td align="right">TradeSchedule</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.TradeSchedule" /></td>
+                </tr>
+                <tr>
+                    <td align="right">RingTimeout</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.RingTimeout" /></td>
+                </tr>
+                <tr>
+                    <td align="right">AudioTimeout</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.AudioTimeout" /></td>
+                </tr>
+                <tr>
+                    <td align="right">WardenChannel</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.WardenChannel" /></td>
+                </tr>
+                <tr>
+                    <td align="right">CustomerId</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.CustomerNo" /></td>
+                </tr>
+                <tr>
+                    <td align="right">SiteId</td>
+                    <td><input type="text" value="@Model.SystemOptionViewModel.SiteNo" /></td>
+                </tr>
+                <tr>
+                    <td align="right">Updated</td>
+                    <td>@Model.SystemOptionViewModel.DateUpdated</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

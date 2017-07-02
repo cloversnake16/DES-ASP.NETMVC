@@ -1,0 +1,43 @@
+﻿@using DESCore.Models
+@using DESCore.Database
+@model IEnumerable<DES.Models.ConnectiondViewModel>
+
+<div style="margin:auto; width:1100px">
+    <table class="table" style="margin-bottom:0">
+        <tr>
+            <td style="border:none" align="right">
+                @Html.ActionLink("Return", "Index", null, null, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    </table>
+    <table id="table_sites" class="table-bordered table-striped">
+        <tr>
+            <th width="110px" style="text-align:center; padding:6px;">No</th>
+            <th width="120px" style="text-align: center; padding: 6px;">SiteName</th>
+            <th width="130px" style="text-align: center; padding: 6px;">UserName</th>
+            <th width="110px" style="text-align: center; padding: 6px;">DeviceId</th>
+            <th width="130px" style="text-align: center; padding: 6px;">InBound</th>
+            <th width="130px" style="text-align: center; padding: 6px;">OutBound</th>
+            <th width="120px" style="text-align: center; padding: 6px;">IPAddress</th>
+            <th width="140px" style="text-align: center; padding: 6px;">PhoneNumber</th>
+            <th width="110px" style="text-align: center; padding: 6px;">Status</th>
+        </tr>
+
+        @for (var i = 0; i < Model.Count(); i++ )
+        {
+            var item = Model.ElementAt(i);
+            <tr>
+                <td width="110px" align="center" style="padding: 6px;">@(i + 1)</td>
+                <td width="120px" align="center" style="padding: 6px;">@item.Site.Site.SiteName</td>
+                <td width="130px" align="center" style="padding: 6px;">@item.Site.UserName</td>
+                <td width="110px" align="center" style="padding: 6px;">@item.Site.Site.DeviceId</td>
+                <td width="130px" align="center" style="padding: 6px;">@DeviceDb.GetSize((ulong)item.Device.InBound)</td>
+                <td width="130px" align="center" style="padding: 6px;">@DeviceDb.GetSize((ulong)item.Device.OutBound)</td>
+                <td width="120px" align="center" style="padding: 6px;">@item.Device.IpAddress</td>
+                <td width="140px" align="center" style="padding: 6px;">@item.Device.PhoneNumber</td>
+                <td width="110px" align="center" style="padding: 6px;">@DeviceDb.Connected(item.Device.ACMVersion)</td>
+            </tr>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,37 @@
+D:\SGC\Work\Paul Bennett\DES\DES\Debug\DESSettings.exe.config
+D:\SGC\Work\Paul Bennett\DES\DES\Debug\DESSettings.exe
+D:\SGC\Work\Paul Bennett\DES\DES\Debug\DESSettings.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\bin\Debug\DESSettings.exe.config
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\bin\Debug\DESSettings.exe
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\bin\Debug\DESSettings.pdb
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\obj\Debug\DESSettings.FormSettings.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\obj\Debug\DESSettings.Properties.Resources.resources
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\obj\Debug\DESSettings.csproj.GenerateResource.Cache
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\obj\Debug\DESSettings.exe
+D:\SGC\Work\Paul Bennett\DES\DES\DESSettings\obj\Debug\DESSettings.pdb
+D:\SGC\Work\DES\DES\DESSettings\bin\Debug\DESSettings.exe.config
+D:\SGC\Work\DES\DES\DESSettings\bin\Debug\DESSettings.exe
+D:\SGC\Work\DES\DES\DESSettings\bin\Debug\DESSettings.pdb
+D:\SGC\Work\DES\DES\DESSettings\obj\Debug\DESSettings.FormSettings.resources
+D:\SGC\Work\DES\DES\DESSettings\obj\Debug\DESSettings.Properties.Resources.resources
+D:\SGC\Work\DES\DES\DESSettings\obj\Debug\DESSettings.csproj.GenerateResource.Cache
+D:\SGC\Work\DES\DES\DESSettings\obj\Debug\DESSettings.exe
+D:\SGC\Work\DES\DES\DESSettings\obj\Debug\DESSettings.pdb
+D:\SGC\Work\DES\DES\DESSettings\obj\Debug\DESSettings.csprojResolveAssemblyReference.cache
+D:\Work\DES\DES\DESSettings\bin\Debug\DESSettings.exe.config
+D:\Work\DES\DES\DESSettings\bin\Debug\DESSettings.exe
+D:\Work\DES\DES\DESSettings\bin\Debug\DESSettings.pdb
+D:\Work\DES\DES\DESSettings\obj\Debug\DESSettings.FormSettings.resources
+D:\Work\DES\DES\DESSettings\obj\Debug\DESSettings.Properties.Resources.resources
+D:\Work\DES\DES\DESSettings\obj\Debug\DESSettings.csproj.GenerateResource.Cache
+D:\Work\DES\DES\DESSettings\obj\Debug\DESSettings.exe
+D:\Work\DES\DES\DESSettings\obj\Debug\DESSettings.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\bin\Debug\DESSettings.exe.config
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\bin\Debug\DESSettings.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\bin\Debug\DESSettings.pdb
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Debug\DESSettings.csprojResolveAssemblyReference.cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Debug\DESSettings.FormSettings.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Debug\DESSettings.Properties.Resources.resources
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Debug\DESSettings.csproj.GenerateResource.Cache
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Debug\DESSettings.exe
+E:\Projects\2017.4.29 Philips\Contractor1Share\DES\DESSettings\obj\Debug\DESSettings.pdb

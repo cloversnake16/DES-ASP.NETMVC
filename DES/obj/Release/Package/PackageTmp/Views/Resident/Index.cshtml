@@ -1,0 +1,51 @@
+﻿@using DESCore.Helpers
+@model DES.Models.ResidentsViewModel
+
+<div style="margin:auto; width:1100px">
+    <table class="table" style="margin-bottom:0">
+        <tr>
+            <td style="border:none" align="right">
+                @Html.ActionLink("Create Resident", "Create", null, null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Return", "Index", "Dashboard", null, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    </table>
+    <table id="table_sites" class="table-bordered table-striped">
+        <tr>
+            <th width="80px" style="text-align:center; padding:6px;">No</th>
+            <th width="120px" style="text-align: center; padding: 6px;">SiteName</th>
+            <th width="100px" style="text-align: center; padding: 6px;">FlatNumber</th>
+            <th width="120px" style="text-align: center; padding: 6px;">Resident Name</th>
+            <th width="120px" style="text-align: center; padding: 6px;">Home Tel.</th>
+            <th width="120px" style="text-align: center; padding: 6px;">Mobile Tel.</th>
+            <th width="120px" style="text-align: center; padding: 6px;">Email</th>
+            <th width="120px" style="text-align: center; padding: 6px;">Tag</th>
+            <th width="120px" style="text-align: center; padding: 6px;">DateUpdated</th>
+            <th width="80px" style="text-align: center; padding: 6px;">Action</th>
+        </tr>
+
+        @if (Model != null && Model.Residents != null)
+        {
+            for (var i = 0; i < Model.Residents.Count(); i++)
+            {
+                var item = Model.Residents.ElementAt(i);
+                <tr>
+                    <td width="80px" align="center" style="padding: 6px;">@(i + 1)</td>
+                    <td width="120px" align="center" style="padding: 6px;">@item.SiteName</td>
+                    <td width="100px" align="center" style="padding: 6px;">@item.Resident.FlatNumber</td>
+                    <td width="120px" align="center" style="padding: 6px;">@item.Resident.ResidentName</td>
+                    <td width="120px" align="center" style="padding: 6px;">@item.Resident.HomeTel</td>
+                    <td width="120px" align="center" style="padding: 6px;">@item.Resident.MobileTel</td>
+                    <td width="120px" align="center" style="padding: 6px;">@item.Resident.Email</td>
+                    <td width="120px" align="center" style="padding: 6px;"><span style="padding:5px 60px; background-color: @ConvertHelper.GetTagBKColor(item.Resident.TagIndex);"></span></td>
+                    <td width="120px" align="center" style="padding: 6px;">@item.Resident.DateUpdated</td>
+                    <td width="80px" align="center" valign="middle">
+                        @Html.ActionLink(" ", "Update", "Resident", new { ResidentId = item.Resident.Id }, new { @class = "glyphicon glyphicon-pencil", @title = "Update Resident", @style = "margin-right:10px" })
+                        @Html.ActionLink(" ", "Delete", "Resident", new { ResidentId = item.Resident.Id }, new { @class = "glyphicon glyphicon-trash", @title = "Delete Resident" })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70165C0F-2DBA-443D-BC29-28896F60C8C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DESCore</RootNamespace>
+    <AssemblyName>DESCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\AccountDb.cs" />
+    <Compile Include="Database\BackTaskDb.cs" />
+    <Compile Include="Database\ChannelDb.cs" />
+    <Compile Include="Database\DeviceDb.cs" />
+    <Compile Include="Database\DoorDb.cs" />
+    <Compile Include="Database\EventEnableDb.cs" />
+    <Compile Include="Database\EventLogDb.cs" />
+    <Compile Include="Database\HomeDb.cs" />
+    <Compile Include="Database\NotificationDb.cs" />
+    <Compile Include="Database\ResidentDb.cs" />
+    <Compile Include="Database\ScheduleDb.cs" />
+    <Compile Include="Database\StaffDb.cs" />
+    <Compile Include="DesCommands\BackTaskHelper.cs" />
+    <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\RegistryHelper.cs" />
+    <Compile Include="Helpers\SecurityHelper.cs" />
+    <Compile Include="Database\SettingDb.cs" />
+    <Compile Include="Database\SiteDataDb.cs" />
+    <Compile Include="Database\SiteDb.cs" />
+    <Compile Include="Database\StaffAccessDb.cs" />
+    <Compile Include="Database\SystemOptionDb.cs" />
+    <Compile Include="Database\TradeCodeDb.cs" />
+    <Compile Include="DesCommands\DesCommand.cs" />
+    <Compile Include="DesCommands\ProgramCommand.cs" />
+    <Compile Include="DesCommands\RetreiveCommand.cs" />
+    <Compile Include="General\Constants.cs" />
+    <Compile Include="DesCommands\CommandHelper.cs" />
+    <Compile Include="Helpers\ConvertHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\LogHelper.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Models\AlertModels.cs" />
+    <Compile Include="Models\BackTask.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\Channel.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConstantsModel.cs" />
+    <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\Description.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DESModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DESModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DESModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DESModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DESModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Device.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Door.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventEnableModel.cs" />
+    <Compile Include="Models\EventLog.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventLogModels.cs" />
+    <Compile Include="Models\ForgotModel.cs" />
+    <Compile Include="Models\Notification.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\RemoteSiteEventLog.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Resident.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResidentModel.cs" />
+    <Compile Include="Models\ResultModel.cs" />
+    <Compile Include="Models\Schedule.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Setting.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Site.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteData.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteDataModels.cs" />
+    <Compile Include="Models\SiteModels.cs" />
+    <Compile Include="Models\Staff.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StaffAccess.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StaffGroup.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StaffGroupSite.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StaffModels.cs" />
+    <Compile Include="Models\SystemOption.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TradeCode.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserLogin.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserModels.cs" />
+    <Compile Include="Models\UserType.cs">
+      <DependentUpon>DESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sessions\DesServer.cs" />
+    <Compile Include="Sessions\DesSession.cs" />
+    <Compile Include="Sessions\TCPClient.cs" />
+    <Compile Include="Sessions\TCPServer.cs" />
+    <Compile Include="Sessions\TcpSession.cs" />
+    <Compile Include="Sessions\WebServer.cs" />
+    <Compile Include="Sessions\WebSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\SqlDb\BackTask.sql" />
+    <Content Include="Database\SqlDb\Channel.sql" />
+    <Content Include="Database\SqlDb\Description.sql" />
+    <Content Include="Database\SqlDb\Device.sql" />
+    <Content Include="Database\SqlDb\Door.sql" />
+    <Content Include="Database\SqlDb\EventLog.sql" />
+    <Content Include="Database\SqlDb\Notification.sql" />
+    <Content Include="Database\SqlDb\RemoteSiteEventLog.sql" />
+    <Content Include="Database\SqlDb\Resident.sql" />
+    <Content Include="Database\SqlDb\Schedule.sql" />
+    <Content Include="Database\SqlDb\Settings.sql" />
+    <Content Include="Database\SqlDb\Site.sql" />
+    <Content Include="Database\SqlDb\SiteData.sql" />
+    <Content Include="Database\SqlDb\Staff.sql" />
+    <Content Include="Database\SqlDb\StaffAccess.sql" />
+    <Content Include="Database\SqlDb\StaffSite.sql" />
+    <Content Include="Database\SqlDb\SystemOption.sql" />
+    <Content Include="Database\SqlDb\TradeCode.sql" />
+    <Content Include="Database\SqlDb\User.sql" />
+    <Content Include="Database\SqlDb\UserLogin.sql" />
+    <Content Include="Database\SqlDb\UserType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Models\DESModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DESModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DESModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DESModel.edmx</DependentUpon>
+      <LastGenOutput>DESModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\DESModel.edmx.diagram">
+      <DependentUpon>DESModel.edmx</DependentUpon>
+    </None>
+    <None Include="Models\DESModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DESModel.edmx</DependentUpon>
+      <LastGenOutput>DESModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

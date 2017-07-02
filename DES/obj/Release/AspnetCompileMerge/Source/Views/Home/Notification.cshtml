@@ -1,0 +1,31 @@
+﻿@model List<DESCore.Models.Notification>
+
+<div style="margin:auto; width:1100px">
+    <h3 style="margin:0 0 10px 0; color: #0000ff">Notification</h3>
+    <table id="table_sites" class="table-bordered table-striped">
+        <tr>
+            <th width="80px" style="text-align:center; padding:6px;">No</th>
+            <th width="220px" style="text-align: center; padding: 6px;">Title</th>
+            <th width="500px" style="text-align: center; padding: 6px;">Contents</th>
+            <th width="220px" style="text-align: center; padding: 6px;">DateTime</th>
+            <th width="80px" style="text-align: center; padding: 6px;">Action</th>
+        </tr>
+
+        @if (Model != null)
+        {
+            for (var i = 0; i < Model.Count; i++)
+            {
+                var item = Model[i];
+                <tr>
+                    <td width="80px" align="center" style="padding: 6px;">@(i + 1)</td>
+                    <td width="220px" align="center" style="padding: 6px;">@item.Title</td>
+                    <td width="500px" align="center" style="padding: 6px;">@item.Contents</td>
+                    <td width="220px" align="center" style="padding: 6px;">@item.DateUpdated</td>
+                    <td width="80px" align="center" valign="middle">
+                        <span class="glyphicon glyphicon-trash span-remove-notification" data-id="@item.Id" title="Remove Notification" style="color: #428bca;"></span>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,58 @@
+﻿@using DESCore.Helpers
+@model DES.Models.ResidentViewModel
+
+@using (Html.BeginForm("Delete", "Resident", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <table class="table">
+        <tr>
+            <td align="center" style="border:none">
+                <table class="table-bordered" width="400">
+                    <tr>
+                        <th style="background-color:#0094ff;text-align:center;color:#ffffff;font-size:large">Delete Resident</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="table" style="margin:0;padding:0">
+                                <tr>
+                                    <td align="right" style="width:140px; border:none">Resident Name</td>
+                                    <td align="left" style="width: 230px; border: none">@Model.ResidentName</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Flat Number</td>
+                                    <td align="left" style="width: 230px; border: none">@Model.FlatNumber</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Home Tel.</td>
+                                    <td align="left" style="width: 230px; border: none">@Model.HomeTel</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Mobile Tel.</td>
+                                    <td align="left" style="width: 230px; border: none">@Model.MobileTel</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Email</td>
+                                    <td align="left" style="width: 230px; border: none">@Model.Email</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 140px; border: none; ">Tag</td>
+                                    <td align="left" style="width: 230px; border: none;"><span style="padding:5px 60px; background-color: @ConvertHelper.GetTagBKColor(Model.TagIndex);"></span></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="border:none">
+                            <input type="submit" value="Delete" id="submit" class="btn btn-success" style="width: 120px;" />
+                            @Html.ActionLink("Cancel", "Index", "Resident", null, new { @class = "btn btn-primary", @style = "width: 120px;" })
+                            @if (Model != null)
+                            {
+                                <p style="color: #0094ff; margin-bottom:0">@Model.Info</p>
+                                <p style="color:#ff0000; margin-bottom:0">@Model.Error</p>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

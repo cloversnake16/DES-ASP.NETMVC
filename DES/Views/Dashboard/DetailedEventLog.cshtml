@@ -1,0 +1,22 @@
+﻿@model DESCore.Models.EventLogModel
+
+@{
+    ViewBag.Title = "DetailedEventLog";
+}
+
+<h3><b>Detailed EventLog</b></h3>
+<br />
+@Html.ActionLink("EventLog", "EventLog", null, null, new { @class = "btn btn-success" })
+<br />
+
+<h4><b>Event Type: </b>@Model.EventLog.Event</h4>
+<br />
+<h4><b>Event Status: </b>@Model.EventLog.Status</h4>
+<br />
+<h4><b>Event Description: </b>@Model.EventLog.Description</h4>
+<br />
+<h4><b>Request:</b></h4>
+<h4>@DESCore.Helpers.ConvertHelper.GetString(Model.EventLog.Request)</h4>
+<br />
+<h4><b>Response:</b></h4>
+<h4>@DESCore.Helpers.ConvertHelper.GetString(Model.EventLog.Response)</h4>

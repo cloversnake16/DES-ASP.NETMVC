@@ -1,0 +1,81 @@
+﻿@model DES.Models.RemoteEventLogViewModel
+
+<div style="margin:auto; width:1140px">
+    <table width="1140" style="margin-bottom:10px">
+        <tr>
+            <td align="left" style="border:0;">
+                @using (Html.BeginForm("SearchRemoteEventLog", "Site", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <table>
+                        <tr>
+                            <td style="border: 0;">
+                                <select name="QueryKey" class="form-control">
+                                    <option value=""></option>
+                                    @foreach (var item in Model.Query.QueryItems)
+                                    {
+                                        if (item == Model.Query.QueryKey)
+                                        {
+                                            <option value="@item" selected>@item</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td style="border: 0;">
+                                <input type="date" name="FromDateTime" class="form-control" style="width:160px;" value="@Model.Query.FromDateTime.ToString("yyyy-MM-dd")">
+                            </td>
+                            <td style="border: 0;">
+                                <input type="date" name="ToDateTime" class="form-control" style="width:160px;" value="@Model.Query.ToDateTime.ToString("yyyy-MM-dd")">
+                            </td>
+                            <td style="border: 0;">
+                                <input type="submit" value="Search" class="btn btn-primary" />
+                            </td>
+                            <td style="border: 0;">
+                                @Html.ActionLink("Clear", "ClearRemoteEventLog", "Site", null, new { @class = "btn btn-default" })
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </td>
+            <td style="border:none" align="right">
+                @Html.ActionLink("Site", "Index", null, null, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    </table>
+    <table width="1140" class="table-bordered table-striped">
+        <tr>
+            <th width="8%" style="text-align:center; padding:6px;">No</th>
+            <th width="8%" style="text-align: center; padding: 6px;">Status</th>
+            <th width="8%" style="text-align: center; padding: 6px;">EventNumber</th>
+            <th width="17%" style="text-align: center; padding: 6px;">DateEvent</th>
+            <th width="17%" style="text-align: center; padding: 6px;">DateACM</th>
+            <th width="17%" style="text-align: center; padding: 6px;">Description</th>
+            <th width="17%" style="text-align: center; padding: 6px;">DateUpdated</th>
+            <th width="8%" style="text-align: center; padding: 6px;">Action</th>
+        </tr>
+
+        @if (Model != null && Model.Events != null)
+        {
+            for (var i = 0; i < Model.Events.Count(); i++)
+            {
+                var item = Model.Events.ElementAt(i);
+                <tr>
+                    <td width="8%" align="center" style="padding: 6px;">@(i + 1)</td>
+                    <td width="8%" align="center" style="padding: 6px;">@item.RemoteSiteEventLog.Status</td>
+                    <td width="8%" align="center" style="padding: 6px;">@item.RemoteSiteEventLog.EventNumber</td>
+                    <td width="17%" align="center" style="padding: 6px;">@item.RemoteSiteEventLog.DateEvent</td>
+                    <td width="17%" align="center" style="padding: 6px;">@item.RemoteSiteEventLog.DateACM</td>
+                    <td width="17%" align="center" style="padding: 6px;">@item.RemoteSiteEventLog.Description</td>
+                    <td width="17%" align="center" style="padding: 6px;">@item.RemoteSiteEventLog.DateUpdated</td>
+                    <td width="8%" align="center" style="padding: 6px;">
+                        @Html.ActionLink(" ", "DetailedRemoteEventLog", "Site", new { EventId = item.RemoteSiteEventLog.Id }, new { @class = "glyphicon glyphicon-list-alt", @title = "Detailed Eventlog" })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
